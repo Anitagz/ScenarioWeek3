@@ -8,7 +8,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="170.0" prefWidth="135.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="circuitsimulator.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="543.0" prefWidth="759.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="circuitsimulator.FXMLDocumentController">
   <children>
     <MenuBar minWidth="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <menus>
@@ -30,5 +30,11 @@
         </Menu>
       </menus>
     </MenuBar>
+    <Separator orientation="VERTICAL" prefHeight="409.9999000000025" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="213.0" AnchorPane.topAnchor="30.0" />
+    <ScrollPane layoutX="0.0" prefHeight="410.0" prefWidth="217.0" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="30.0">
+      <content>
+        <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="415.9998779296875" prefWidth="200.0" />
+      </content>
+    </ScrollPane>
   </children>
 </AnchorPane>
