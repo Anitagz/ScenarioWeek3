@@ -12,16 +12,13 @@ package circuitsimulator;
 public class lamp {
     int on = 1;
     int off = 0;
-    private resistance setResistance;
+    private double resistance;
     
 public int getStatus(){
     return 0;
 }
 
-
 public void setResistance(){
 }
-
-    
     
 }
