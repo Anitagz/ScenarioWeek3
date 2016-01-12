@@ -6,6 +6,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
 <AnchorPane id="AnchorPane" prefHeight="543.0" prefWidth="759.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="circuitsimulator.FXMLDocumentController">
@@ -33,7 +34,20 @@
     <Separator orientation="VERTICAL" prefHeight="409.9999000000025" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="213.0" AnchorPane.topAnchor="30.0" />
     <ScrollPane layoutX="0.0" prefHeight="410.0" prefWidth="217.0" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="30.0">
       <content>
-        <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="415.9998779296875" prefWidth="200.0" />
+        <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="498.0" prefWidth="202.00009999999747">
+          <children>
+            <ImageView fitHeight="62.99998474121094" fitWidth="83.99998208248223" layoutX="13.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                <image>
+                <Image url="circuitsimulator/example.png"/>
+                </image>
+            </ImageView>
+            <ImageView fitHeight="62.99998474121094" fitWidth="83.99998208248223" layoutX="105.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                <image>
+                <Image url="circuitsimulator/example2.png"/>
+                </image>
+            </ImageView>
+          </children>
+        </AnchorPane>
       </content>
     </ScrollPane>
   </children>
