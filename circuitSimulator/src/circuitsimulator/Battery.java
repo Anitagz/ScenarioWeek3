@@ -7,8 +7,8 @@ package circuitsimulator;
 
 /**
  *
- * @author Anita
+ * @author stupidjc
  */
-public class circuit {
+public class Battery {
     
 }
