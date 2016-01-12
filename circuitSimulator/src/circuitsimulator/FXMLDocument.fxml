@@ -9,7 +9,7 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="543.0" prefWidth="759.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="circuitsimulator.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="543.0" prefWidth="759.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="circuitsimulator.FXMLDocumentController">
   <children>
     <MenuBar minWidth="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <menus>
@@ -36,41 +36,41 @@
       <content>
         <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="498.0" prefWidth="202.00009999999747">
           <children>
-            <ImageView fitHeight="62.99998474121094" fitWidth="83.99998208248223" layoutX="24.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
-                <image>
+            <ImageView id="fid" fitHeight="62.99998474121094" fitWidth="83.99998208248223" layoutX="24.0" layoutY="14.0" onDragDropped="#somethingDropped" pickOnBounds="true" preserveRatio="true">
+              <image>
                 <Image url="@images/ammeter.png" />
-                </image>
+              </image>
             </ImageView>
             <ImageView fitHeight="62.99998474121094" fitWidth="83.99998208248223" layoutX="24.0" layoutY="280.0" pickOnBounds="true" preserveRatio="true">
-                <image>
+              <image>
                 <Image url="@images/voltmeter.png" />
-                </image>
+              </image>
             </ImageView>
-                  <ImageView fitHeight="62.99998474121094" fitWidth="83.99998208248223" layoutX="25.0" layoutY="343.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@images/closedswitch.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="62.99998474121094" fitWidth="83.99998208248223" layoutX="25.0" layoutY="77.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@images/battery.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="62.99998474121094" fitWidth="83.99998208248223" layoutX="24.0" layoutY="140.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@images/lamp.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="62.99998474121094" fitWidth="83.99998208248223" layoutX="24.0" layoutY="406.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@images/resistor.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="62.99998474121094" fitWidth="83.99998208248223" layoutX="24.0" layoutY="203.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@images/transistor.png" />
-                     </image>
-                  </ImageView>
+            <ImageView fitHeight="62.99998474121094" fitWidth="83.99998208248223" layoutX="25.0" layoutY="343.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@images/closedswitch.png" />
+              </image>
+            </ImageView>
+            <ImageView fitHeight="62.99998474121094" fitWidth="83.99998208248223" layoutX="25.0" layoutY="77.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@images/battery.png" />
+              </image>
+            </ImageView>
+            <ImageView fitHeight="62.99998474121094" fitWidth="83.99998208248223" layoutX="24.0" layoutY="140.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@images/lamp.png" />
+              </image>
+            </ImageView>
+            <ImageView fitHeight="62.99998474121094" fitWidth="83.99998208248223" layoutX="24.0" layoutY="406.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@images/resistor.png" />
+              </image>
+            </ImageView>
+            <ImageView fitHeight="62.99998474121094" fitWidth="83.99998208248223" layoutX="24.0" layoutY="203.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@images/transistor.png" />
+              </image>
+            </ImageView>
           </children>
         </AnchorPane>
       </content>
