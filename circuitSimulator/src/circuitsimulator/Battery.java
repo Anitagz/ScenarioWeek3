@@ -9,6 +9,6 @@ package circuitsimulator;
  *
  * @author stupidjc
  */
-public class Battery {
-    
+public class Battery extends Component{
+    private double voltage;
 }
