@@ -11,4 +11,23 @@ package circuitsimulator;
  */
 public class voltmeter {
     
+    double voltage;
+    double current;
+    double resistance;
+    
+    private double getCurrent()
+    {
+        return current;
+    }
+    
+    private double getResistance()
+    {
+        return resistance;
+    }
+    
+    private double calculatevoltage()
+    {
+        voltage=getCurrent()*getResistance();
+        return voltage;
+    }
 }
