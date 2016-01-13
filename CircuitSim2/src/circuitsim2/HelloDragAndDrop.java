@@ -57,36 +57,37 @@ public class HelloDragAndDrop extends Application {
         
         Image img2 = new Image(getClass().getResourceAsStream("voltmeter.png"));
         ImageView voltmeterSym = new ImageView(img2);
-        ammeterSym.setFitHeight(40);
-        ammeterSym.setFitWidth(40);
+        voltmeterSym.setFitHeight(40);
+        voltmeterSym.setFitWidth(40);
         
         Image img3 = new Image(getClass().getResourceAsStream("battery.png"));
         ImageView batterySym = new ImageView(img3);
-        ammeterSym.setFitHeight(40);
-        ammeterSym.setFitWidth(40);
+        batterySym.setFitHeight(40);
+        batterySym.setFitWidth(40);
         
         Image img4 = new Image(getClass().getResourceAsStream("lamp.png"));
         ImageView lampSym = new ImageView(img4);
-        ammeterSym.setFitHeight(40);
-        ammeterSym.setFitWidth(40);
+        lampSym.setFitHeight(40);
+        lampSym.setFitWidth(40);
         
         Image img5 = new Image(getClass().getResourceAsStream("resistor.png"));
         ImageView resistorSym = new ImageView(img5);
-        ammeterSym.setFitHeight(40);
-        ammeterSym.setFitWidth(40);
+        resistorSym.setFitHeight(40);
+        resistorSym.setFitWidth(40);
         
         Image img6 = new Image(getClass().getResourceAsStream("openswitch.png"));
         ImageView openswitchSym = new ImageView(img6);
-        ammeterSym.setFitHeight(40);
-        ammeterSym.setFitWidth(40);
+        openswitchSym.setFitHeight(40);
+        openswitchSym.setFitWidth(40);
         
         GridPane componentsGrid = new GridPane();
         componentsGrid.add(batterySym,0,0);
         componentsGrid.add(lampSym,0,1);
-        componentsGrid.add(resistorSym,1,0);
-        componentsGrid.add(openswitchSym,1,1);
-        componentsGrid.add(ammeterSym, 2, 0);
-        componentsGrid.add(voltmeterSym,2,1);
+        //componentsGrid.add(resistorSym,1,0);
+        //componentsGrid.add(openswitchSym,1,1);
+        //componentsGrid.add(ammeterSym, 2, 0);
+        //componentsGrid.add(voltmeterSym,2,1);
+        
         
         
         
@@ -99,7 +100,7 @@ public class HelloDragAndDrop extends Application {
                 
         );*/
         
-        grid.add(componentsGrid,0,1);
+        //grid.add(componentsGrid,0,1);
         
         
         
