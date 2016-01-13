@@ -18,7 +18,13 @@ public int getStatus(){
     return 0;
 }
 
+<<<<<<< HEAD
 public void setResistance(){
+=======
+
+public void setResistance(double resistance){
+    this.resistance = resistance;
+>>>>>>> origin/master
 }
     
 }

@@ -37,7 +37,7 @@
       <content>
         <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="498.0" prefWidth="202.00009999999747">
           <children>
-            <ImageView id="fid" fitHeight="62.99998474121094" fitWidth="83.99998208248223" layoutX="24.0" layoutY="14.0" onDragDropped="#somethingDropped" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="62.99998474121094" fitWidth="83.99998208248223" layoutX="24.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
               <image>
                 <Image url="@images/ammeter.png" />
               </image>
@@ -77,5 +77,6 @@
         </AnchorPane>
       </content>
     </ScrollPane>
+    <StackPane fx:id="stpane" prefHeight="449.0" prefWidth="542.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0" />
   </children>
 </AnchorPane>
