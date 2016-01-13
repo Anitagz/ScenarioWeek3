@@ -78,11 +78,11 @@ public class HelloDragAndDrop extends Application {
         openswitchSym.setFitHeight(symbolSize);
         openswitchSym.setFitWidth(symbolSize);
         
-        setupGestureSource(batterySym);
-        setupGestureSource(lampSym);
-        setupGestureSource(resistorSym);
-        setupGestureSource(ammeterSym);
-        setupGestureSource(voltmeterSym);
+        setupGestureSource(batterySym,"battery");
+        setupGestureSource(lampSym, "lamp");
+        setupGestureSource(resistorSym, "resistor");
+        setupGestureSource(ammeterSym, "ammeter");
+        setupGestureSource(voltmeterSym, "voltmeter");
         
         
         GridPane componentsGrid = new GridPane();
@@ -120,7 +120,7 @@ public class HelloDragAndDrop extends Application {
         stage.show();
     }
 
-    void setupGestureSource(ImageView source){
+    void setupGestureSource(ImageView source, String component){
         
         source.setOnDragDetected(new EventHandler <MouseEvent>() {
             public void handle(MouseEvent event) {
@@ -132,7 +132,7 @@ public class HelloDragAndDrop extends Application {
                 
                 /* put a string on dragboard */
                 ClipboardContent content = new ClipboardContent();
-                content.putString("hi");
+                content.putString(component);
                 db.setContent(content);
                 
                 event.consume();
@@ -213,6 +213,59 @@ public class HelloDragAndDrop extends Application {
                     //target.setText(db.getString());
                     success = true;
                 }
+                
+                //System.out.println(db.getString());
+                
+                String component = db.getString();
+                
+                
+                int gridSize = 40;
+                ImageView iv1 = new ImageView();
+                iv1.setFitHeight(gridSize);
+                iv1.setFitWidth(gridSize);
+                
+                /*
+                switch(component){
+                    case "battery":
+                        Image img1 = new Image(getClass().getResourceAsStream("battery.png"));
+                        iv1.setImage(img1);
+                        break;
+                }
+                */
+                        
+                if(component.compareTo("battery")==0){
+                    Image img1 = new Image(getClass().getResourceAsStream("battery.png"));
+                        iv1.setImage(img1);
+                }
+                if(component.compareTo("ammeter")==0){
+                    Image img1 = new Image(getClass().getResourceAsStream("ammeter.png"));
+                        iv1.setImage(img1);
+                }
+                if(component.compareTo("voltmeter")==0){
+                    Image img1 = new Image(getClass().getResourceAsStream("voltmeter.png"));
+                        iv1.setImage(img1);
+                }
+                if(component.compareTo("resistor")==0){
+                    Image img1 = new Image(getClass().getResourceAsStream("resistor.png"));
+                        iv1.setImage(img1);
+                }
+                if(component.compareTo("lamp")==0){
+                    Image img1 = new Image(getClass().getResourceAsStream("lamp.png"));
+                        iv1.setImage(img1);
+                }
+                if(component.compareTo("openswitch")==0){
+                    Image img1 = new Image(getClass().getResourceAsStream("openswitch.png"));
+                        iv1.setImage(img1);
+                }
+                if(component.compareTo("closedswitch")==0){
+                    Image img1 = new Image(getClass().getResourceAsStream("closedswitch.png"));
+                        iv1.setImage(img1);
+                }
+                
+                
+                
+                target.getChildren().add(iv1);
+                
                 /* let the source know whether the string was successfully 
                  * transferred and used */
                 event.setDropCompleted(success);
