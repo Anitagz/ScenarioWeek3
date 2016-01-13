@@ -46,7 +46,7 @@ public class HelloDragAndDrop extends Application {
         menuBar.getMenus().addAll(menuFile, menuEdit, menuHelp);
         grid.add(menuBar, 0, 0, 2, 1);
         
-        int symbolSize = 50;
+        int symbolSize = 70;
         
         Image img1 = new Image(getClass().getResourceAsStream("ammeter.png"));
         ImageView ammeterSym = new ImageView(img1);
@@ -92,7 +92,8 @@ public class HelloDragAndDrop extends Application {
         componentsGrid.add(openswitchSym,1,1);
         componentsGrid.add(ammeterSym, 0, 2);
         componentsGrid.add(voltmeterSym,1,2);
-        
+        componentsGrid.setHgap(5);
+        componentsGrid.setVgap(5);
         grid.add(componentsGrid,0,1);
         
         
@@ -214,8 +215,6 @@ public class HelloDragAndDrop extends Application {
                     success = true;
                 }
                 
-                //System.out.println(db.getString());
-                
                 String component = db.getString();
                 
                 
@@ -224,40 +223,33 @@ public class HelloDragAndDrop extends Application {
                 iv1.setFitHeight(gridSize);
                 iv1.setFitWidth(gridSize);
                 
-                /*
-                switch(component){
-                    case "battery":
-                        Image img1 = new Image(getClass().getResourceAsStream("battery.png"));
-                        iv1.setImage(img1);
-                        break;
-                }
-                */
+               
                         
                 if(component.compareTo("battery")==0){
                     Image img1 = new Image(getClass().getResourceAsStream("battery.png"));
                         iv1.setImage(img1);
                 }
-                if(component.compareTo("ammeter")==0){
+                else if(component.compareTo("ammeter")==0){
                     Image img1 = new Image(getClass().getResourceAsStream("ammeter.png"));
                         iv1.setImage(img1);
                 }
-                if(component.compareTo("voltmeter")==0){
+                else if(component.compareTo("voltmeter")==0){
                     Image img1 = new Image(getClass().getResourceAsStream("voltmeter.png"));
                         iv1.setImage(img1);
                 }
-                if(component.compareTo("resistor")==0){
+                else if(component.compareTo("resistor")==0){
                     Image img1 = new Image(getClass().getResourceAsStream("resistor.png"));
                         iv1.setImage(img1);
                 }
-                if(component.compareTo("lamp")==0){
+                else if(component.compareTo("lamp")==0){
                     Image img1 = new Image(getClass().getResourceAsStream("lamp.png"));
                         iv1.setImage(img1);
                 }
-                if(component.compareTo("openswitch")==0){
+                else if(component.compareTo("openswitch")==0){
                     Image img1 = new Image(getClass().getResourceAsStream("openswitch.png"));
                         iv1.setImage(img1);
                 }
-                if(component.compareTo("closedswitch")==0){
+                else if(component.compareTo("closedswitch")==0){
                     Image img1 = new Image(getClass().getResourceAsStream("closedswitch.png"));
                         iv1.setImage(img1);
                 }
