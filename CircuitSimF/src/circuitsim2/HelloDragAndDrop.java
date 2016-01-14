@@ -268,6 +268,7 @@ public class HelloDragAndDrop extends Application {
         clearButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
                 
+                //grid.getChildren().remove
                 GridPane canvasGrid = new GridPane();
                 grid.add(canvasGrid,1,1);
                 canvasGrid.setGridLinesVisible(true);
