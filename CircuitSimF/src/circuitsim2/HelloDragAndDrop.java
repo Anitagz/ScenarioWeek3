@@ -10,13 +10,16 @@ import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.*;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -280,6 +283,11 @@ public class HelloDragAndDrop extends Application {
                         Label lab = new Label("The Resistance is "+res);
                         System.out.println(res);
                         rside.getChildren().addAll(lab);
+                        Label lab = new Label("The Voltage");
+                        TextField tf1 = new TextField(String.valueOf(vol));
+                        Button submit = new Button("Done");
+                        System.out.println(vol);
+                        rside.getChildren().addAll(lab, tf1, submit);
                     }
                 }
             }

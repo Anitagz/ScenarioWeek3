@@ -9,7 +9,7 @@ package circuitsim2;
  *
  * @author User
  */
-public class resistor extends Component{
+public class Resistor extends Component{
     
     private double resistance;
     

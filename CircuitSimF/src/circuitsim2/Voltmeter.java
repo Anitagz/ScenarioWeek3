@@ -9,7 +9,7 @@ package circuitsim2;
  *
  * @author User
  */
-public class voltmeter extends Component{
+public class Voltmeter extends Component{
     
     
     Lamp lamp = new Lamp();

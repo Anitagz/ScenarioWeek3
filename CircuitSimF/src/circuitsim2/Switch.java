@@ -9,7 +9,7 @@ package circuitsim2;
  *
  * @author User
  */
-public class switchh extends Component{
+public class Switch extends Component{
     
     boolean open;
     

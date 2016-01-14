@@ -9,7 +9,7 @@ package circuitsim2;
  *
  * @author User
  */
-public class lamp extends Component{
+public class Lamp extends Component{
     
     private boolean on;
     private double resistance;

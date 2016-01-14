@@ -9,7 +9,7 @@ package circuitsim2;
  *
  * @author User
  */
-public class ammeter extends Component{
+public class Ammeter extends Component{
     
     Lamp lamp = new Lamp();
     Battery battery = new Battery();
