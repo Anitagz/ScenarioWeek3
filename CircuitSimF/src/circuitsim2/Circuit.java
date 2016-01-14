@@ -78,6 +78,9 @@ public class Circuit implements Serializable{
             if(grid[i][j] instanceof Switch){
                 startCheck(i+1, j, "left");
             }
+            if(grid[i][j] instanceof Resistor){
+                startCheck(i+1, j, "left");
+            }
             else{
                 System.out.println("Not a valid circuit!" + i + j + " " + getLineNumber());
             }
@@ -116,6 +119,9 @@ public class Circuit implements Serializable{
             }
             else if(grid[i][j] instanceof Switch){
                 startCheck(i-1, j, "right");
+            }
+            else if(grid[i][j] instanceof Resistor){
+                startCheck(i-1, j, "left");
             }
             else{
                 System.out.println("Not a valid circuit!"+i+j + " " + getLineNumber());
