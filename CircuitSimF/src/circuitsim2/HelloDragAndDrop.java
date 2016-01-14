@@ -443,7 +443,7 @@ public class HelloDragAndDrop extends Application {
                         setupMouseClickSource(iv1,i,j);
                         //System.out.println(i);
                         //System.out.println(j);
-                        Wire wiref = new Wire("wire1");
+                        Wire wiref = new Wire("wire1", "wireF");
                         circuit.setComponent(wiref, i, j);
                 }
                 else if(component.compareTo("wireHorizontal")==0){
@@ -453,7 +453,7 @@ public class HelloDragAndDrop extends Application {
                         setupMouseClickSource(iv1,i,j);
                         //System.out.println(i);
                         //System.out.println(j);
-                        Wire wirehoriz = new Wire("wire2");
+                        Wire wirehoriz = new Wire("wire2", "wireHorizontal");
                         circuit.setComponent(wirehoriz, i, j);
                 }
                 else if(component.compareTo("wireJ")==0){
@@ -463,7 +463,7 @@ public class HelloDragAndDrop extends Application {
                         setupMouseClickSource(iv1,i,j);
                         //System.out.println(i);
                         //System.out.println(j);
-                        Wire wirej = new Wire("wire3");
+                        Wire wirej = new Wire("wire3","wireJ");
                         circuit.setComponent(wirej, i, j);
                 }
                 else if(component.compareTo("wireL")==0){
@@ -473,7 +473,7 @@ public class HelloDragAndDrop extends Application {
                         setupMouseClickSource(iv1,i,j);
                         //System.out.println(i);
                         //System.out.println(j);
-                        Wire wirel = new Wire("wire4");
+                        Wire wirel = new Wire("wire4","wireL");
                         circuit.setComponent(wirel, i, j);
                 }
                 else if(component.compareTo("wireLeftDown")==0){
@@ -483,7 +483,7 @@ public class HelloDragAndDrop extends Application {
                         setupMouseClickSource(iv1,i,j);
                         //System.out.println(i);
                         //System.out.println(j);
-                        Wire wireleftdown = new Wire("wire5");
+                        Wire wireleftdown = new Wire("wire5","wireLeftDown");
                         circuit.setComponent(wireleftdown, i, j);
                 }
                 else if(component.compareTo("wireTdown")==0){
@@ -493,7 +493,7 @@ public class HelloDragAndDrop extends Application {
                         setupMouseClickSource(iv1,i,j);
                         //System.out.println(i);
                         //System.out.println(j);
-                        Wire wiretdown = new Wire("wire6");
+                        Wire wiretdown = new Wire("wire6","wireTdown");
                         circuit.setComponent(wiretdown, i, j);
                 }
                 else if(component.compareTo("wireTleft")==0){
@@ -503,7 +503,7 @@ public class HelloDragAndDrop extends Application {
                         setupMouseClickSource(iv1,i,j);
                         //System.out.println(i);
                         //System.out.println(j);
-                        Wire wiretleft = new Wire("wire7");
+                        Wire wiretleft = new Wire("wire7","wireTleft");
                         circuit.setComponent(wiretleft, i, j);
                 }
                 else if(component.compareTo("wireTup")==0){
@@ -513,7 +513,7 @@ public class HelloDragAndDrop extends Application {
                         setupMouseClickSource(iv1,i,j);
                         //System.out.println(i);
                         //System.out.println(j);
-                        Wire wiretup = new Wire("wire8");
+                        Wire wiretup = new Wire("wire8","wireTup");
                         circuit.setComponent(wiretup, i, j);
                 }
                 else if(component.compareTo("wireVertical")==0){
@@ -523,7 +523,7 @@ public class HelloDragAndDrop extends Application {
                         setupMouseClickSource(iv1,i,j);
                         //System.out.println(i);
                         //System.out.println(j);
-                        Wire wirevertical = new Wire("wire9");
+                        Wire wirevertical = new Wire("wire9","wireVertical");
                         circuit.setComponent(wirevertical, i, j);
                 }
                 
