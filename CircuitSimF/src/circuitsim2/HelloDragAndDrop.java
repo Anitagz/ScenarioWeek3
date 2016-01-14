@@ -30,6 +30,8 @@ public class HelloDragAndDrop extends Application {
 
         Group root = new Group();
         
+        Circuit circuit = new Circuit();
+        
         GridPane grid = new GridPane();
         Scene scene = new Scene(grid, 1000, 500);
         
@@ -189,7 +191,11 @@ public class HelloDragAndDrop extends Application {
             }
         }
         
-
+        StackPane rpane = new StackPane();
+        rpane.setMinSize(gridSize, gridSize);
+        rpane.setMaxSize(gridSize, gridSize);
+        rpane.setPrefSize(gridSize, gridSize);
+        grid.add(rpane, 2,1);        
         
         stage.setScene(scene);
         stage.show();
@@ -316,7 +322,7 @@ public class HelloDragAndDrop extends Application {
                         
                 }
                 else if(component.compareTo("ammeter")==0){
-                    Image img1 = new Image(getClass().getResourceAsStream("Images/example.png"));
+                    Image img1 = new Image(getClass().getResourceAsStream("Images/ammeter.png"));
                         iv1.setImage(img1);
                 }
                 else if(component.compareTo("voltmeter")==0){
