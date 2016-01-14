@@ -31,7 +31,7 @@ public class HelloDragAndDrop extends Application {
         Group root = new Group();
         
         GridPane grid = new GridPane();
-        Scene scene = new Scene(grid, 800, 500);
+        Scene scene = new Scene(grid, 1000, 500);
         
         
         //grid.setAlignment(Pos.CENTER);
@@ -46,7 +46,7 @@ public class HelloDragAndDrop extends Application {
         menuBar.getMenus().addAll(menuFile, menuEdit, menuHelp);
         grid.add(menuBar, 0, 0, 2, 1);
         
-        int symbolSize = 70;
+        int symbolSize = 50;
         
         Image img1 = new Image(getClass().getResourceAsStream("ammeter.png"));
         ImageView ammeterSym = new ImageView(img1);
@@ -78,11 +78,73 @@ public class HelloDragAndDrop extends Application {
         openswitchSym.setFitHeight(symbolSize);
         openswitchSym.setFitWidth(symbolSize);
         
+        Image img7 = new Image(getClass().getResourceAsStream("wireF.png"));
+        ImageView wireFSym = new ImageView(img7);
+        wireFSym.setFitHeight(symbolSize);
+        wireFSym.setFitWidth(symbolSize);
+        
+        Image img8 = new Image(getClass().getResourceAsStream("wireHorizontal.png"));
+        ImageView wireHorizontalSym = new ImageView(img8);
+        wireHorizontalSym.setFitHeight(symbolSize);
+        wireHorizontalSym.setFitWidth(symbolSize);
+        
+        Image img9 = new Image(getClass().getResourceAsStream("wireJ.png"));
+        ImageView wireJSym = new ImageView(img9);
+        wireJSym.setFitHeight(symbolSize);
+        wireJSym.setFitWidth(symbolSize);
+        
+        Image img10 = new Image(getClass().getResourceAsStream("wireL.png"));
+        ImageView wireLSym = new ImageView(img10);
+        wireLSym.setFitHeight(symbolSize);
+        wireLSym.setFitWidth(symbolSize);
+        
+        Image img11 = new Image(getClass().getResourceAsStream("wireLeftDown.png"));
+        ImageView wireLeftDownSym = new ImageView(img11);
+        wireLeftDownSym.setFitHeight(symbolSize);
+        wireLeftDownSym.setFitWidth(symbolSize);
+        
+        Image img13 = new Image(getClass().getResourceAsStream("wireTdown.png"));
+        ImageView wireTdownSym = new ImageView(img13);
+        wireTdownSym.setFitHeight(symbolSize);
+        wireTdownSym.setFitWidth(symbolSize);
+        
+        Image img14 = new Image(getClass().getResourceAsStream("wireTright.png"));
+        ImageView wireTrightSym = new ImageView(img14);
+        wireTrightSym.setFitHeight(symbolSize);
+        wireTrightSym.setFitWidth(symbolSize);
+        
+        Image img15 = new Image(getClass().getResourceAsStream("wireTup.png"));
+        ImageView wireTupSym = new ImageView(img15);
+        wireTupSym.setFitHeight(symbolSize);
+        wireTupSym.setFitWidth(symbolSize);
+        
+        Image img16 = new Image(getClass().getResourceAsStream("wireVertical.png"));
+        ImageView wireVerticalSym = new ImageView(img16);
+        wireVerticalSym.setFitHeight(symbolSize);
+        wireVerticalSym.setFitWidth(symbolSize);
+        
+        Image img17 = new Image(getClass().getResourceAsStream("wireTleft.png"));
+        ImageView wireTleftSym = new ImageView(img17);
+        wireTleftSym.setFitHeight(symbolSize);
+        wireTleftSym.setFitWidth(symbolSize);
+        
         setupGestureSource(batterySym,"battery");
         setupGestureSource(lampSym, "lamp");
         setupGestureSource(resistorSym, "resistor");
         setupGestureSource(ammeterSym, "ammeter");
         setupGestureSource(voltmeterSym, "voltmeter");
+        setupGestureSource(openswitchSym, "openswitch");
+        setupGestureSource(wireFSym, "wireF");
+        setupGestureSource(wireHorizontalSym, "wireHorizontal");
+        setupGestureSource(wireJSym, "wireJ");
+        setupGestureSource(wireLSym, "wireL");
+        setupGestureSource(wireLeftDownSym, "wireLeftDown");
+        setupGestureSource(wireTdownSym, "wireTdown");
+        setupGestureSource(wireTleftSym, "wireTleft");
+        setupGestureSource(wireTrightSym, "wireTright");
+        setupGestureSource(wireTupSym, "wireTup");
+        setupGestureSource(wireVerticalSym, "wireVertical");
+               
         
         
         GridPane componentsGrid = new GridPane();
@@ -92,6 +154,16 @@ public class HelloDragAndDrop extends Application {
         componentsGrid.add(openswitchSym,1,1);
         componentsGrid.add(ammeterSym, 0, 2);
         componentsGrid.add(voltmeterSym,1,2);
+        componentsGrid.add(wireVerticalSym,0,3);
+        componentsGrid.add(wireHorizontalSym,1,3);
+        componentsGrid.add(wireJSym,0,4);
+        componentsGrid.add(wireLSym,1,4);
+        componentsGrid.add(wireLeftDownSym,0,5);
+        componentsGrid.add(wireFSym,1,5);
+        componentsGrid.add(wireTdownSym,0,6);
+        componentsGrid.add(wireTleftSym,1,6);
+        componentsGrid.add(wireTrightSym,0,7);
+        componentsGrid.add(wireTupSym,1,7);
         componentsGrid.setHgap(5);
         componentsGrid.setVgap(5);
         grid.add(componentsGrid,0,1);
@@ -100,16 +172,18 @@ public class HelloDragAndDrop extends Application {
         GridPane canvasGrid = new GridPane();
         grid.add(canvasGrid,1,1);
         canvasGrid.setGridLinesVisible(true);
-        for(int j = 0; j < 10; j++){
+        int gridSize = 50;
+        for(int j = 0; j < 9; j++){
             
         
-            for(int i=0; i < 15; i++){
+            for(int i=0; i < 13; i++){
                 //canvasGrid.add(gridBG,i,0);
 
                 Pane stpane = new StackPane();
-                stpane.setMinSize(40, 40);
-                stpane.setMaxSize(40,40);
-                stpane.setPrefSize(40, 40);
+                stpane.setMinSize(gridSize, gridSize);
+                stpane.setMaxSize(gridSize, gridSize);
+                stpane.setPrefSize(gridSize, gridSize);
+                //stpane.setStyle("-fx-background-color:white");
                 setupGestureTarget(stpane);
                 canvasGrid.add(stpane,i,j);
             }
@@ -150,6 +224,18 @@ public class HelloDragAndDrop extends Application {
                 }
                 
                 event.consume();
+            }
+        });
+    }
+    
+    void setupMouseClickSource(ImageView source){
+        source.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                System.out.println("mouse click detected! "+event.getSource());
+                if (event.getButton() == MouseButton.SECONDARY) {
+                    System.out.println("Right button clicked");
+                }
             }
         });
     }
@@ -218,7 +304,7 @@ public class HelloDragAndDrop extends Application {
                 String component = db.getString();
                 
                 
-                int gridSize = 40;
+                int gridSize = 50;
                 ImageView iv1 = new ImageView();
                 iv1.setFitHeight(gridSize);
                 iv1.setFitWidth(gridSize);
@@ -228,6 +314,8 @@ public class HelloDragAndDrop extends Application {
                 if(component.compareTo("battery")==0){
                     Image img1 = new Image(getClass().getResourceAsStream("battery.png"));
                         iv1.setImage(img1);
+                        setupGestureSource(iv1, component);
+                        setupMouseClickSource(iv1);
                 }
                 else if(component.compareTo("ammeter")==0){
                     Image img1 = new Image(getClass().getResourceAsStream("ammeter.png"));
@@ -251,6 +339,42 @@ public class HelloDragAndDrop extends Application {
                 }
                 else if(component.compareTo("closedswitch")==0){
                     Image img1 = new Image(getClass().getResourceAsStream("closedswitch.png"));
+                        iv1.setImage(img1);
+                }
+                else if(component.compareTo("wireF")==0){
+                    Image img1 = new Image(getClass().getResourceAsStream("wireF.png"));
+                        iv1.setImage(img1);
+                }
+                else if(component.compareTo("wireHorizontal")==0){
+                    Image img1 = new Image(getClass().getResourceAsStream("wireHorizontal.png"));
+                        iv1.setImage(img1);
+                }
+                else if(component.compareTo("wireJ")==0){
+                    Image img1 = new Image(getClass().getResourceAsStream("wireJ.png"));
+                        iv1.setImage(img1);
+                }
+                else if(component.compareTo("wireL")==0){
+                    Image img1 = new Image(getClass().getResourceAsStream("wireL.png"));
+                        iv1.setImage(img1);
+                }
+                else if(component.compareTo("wireLeftDown")==0){
+                    Image img1 = new Image(getClass().getResourceAsStream("wireLeftDown.png"));
+                        iv1.setImage(img1);
+                }
+                else if(component.compareTo("wireTdown")==0){
+                    Image img1 = new Image(getClass().getResourceAsStream("wireTdown.png"));
+                        iv1.setImage(img1);
+                }
+                else if(component.compareTo("wireTleft")==0){
+                    Image img1 = new Image(getClass().getResourceAsStream("wireTleft.png"));
+                        iv1.setImage(img1);
+                }
+                else if(component.compareTo("wireTup")==0){
+                    Image img1 = new Image(getClass().getResourceAsStream("wireTup.png"));
+                        iv1.setImage(img1);
+                }
+                else if(component.compareTo("wireVertical")==0){
+                    Image img1 = new Image(getClass().getResourceAsStream("wireVertical.png"));
                         iv1.setImage(img1);
                 }
                 
