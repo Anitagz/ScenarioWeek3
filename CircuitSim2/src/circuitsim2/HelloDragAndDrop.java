@@ -48,82 +48,82 @@ public class HelloDragAndDrop extends Application {
         
         int symbolSize = 50;
         
-        Image img1 = new Image(getClass().getResourceAsStream("ammeter.png"));
+        Image img1 = new Image(getClass().getResourceAsStream("images/ammeter.png"));
         ImageView ammeterSym = new ImageView(img1);
         ammeterSym.setFitHeight(symbolSize);
         ammeterSym.setFitWidth(symbolSize);
         
-        Image img2 = new Image(getClass().getResourceAsStream("voltmeter.png"));
+        Image img2 = new Image(getClass().getResourceAsStream("images/voltmeter.png"));
         ImageView voltmeterSym = new ImageView(img2);
         voltmeterSym.setFitHeight(symbolSize);
         voltmeterSym.setFitWidth(symbolSize);
         
-        Image img3 = new Image(getClass().getResourceAsStream("battery.png"));
+        Image img3 = new Image(getClass().getResourceAsStream("images/battery.png"));
         ImageView batterySym = new ImageView(img3);
         batterySym.setFitHeight(symbolSize);
         batterySym.setFitWidth(symbolSize);
         
-        Image img4 = new Image(getClass().getResourceAsStream("lamp.png"));
+        Image img4 = new Image(getClass().getResourceAsStream("images/lamp.png"));
         ImageView lampSym = new ImageView(img4);
         lampSym.setFitHeight(symbolSize);
         lampSym.setFitWidth(symbolSize);
         
-        Image img5 = new Image(getClass().getResourceAsStream("resistor.png"));
+        Image img5 = new Image(getClass().getResourceAsStream("images/resistor.png"));
         ImageView resistorSym = new ImageView(img5);
         resistorSym.setFitHeight(symbolSize);
         resistorSym.setFitWidth(symbolSize);
         
-        Image img6 = new Image(getClass().getResourceAsStream("openswitch.png"));
+        Image img6 = new Image(getClass().getResourceAsStream("images/openswitch.png"));
         ImageView openswitchSym = new ImageView(img6);
         openswitchSym.setFitHeight(symbolSize);
         openswitchSym.setFitWidth(symbolSize);
         
-        Image img7 = new Image(getClass().getResourceAsStream("wireF.png"));
+        Image img7 = new Image(getClass().getResourceAsStream("images/wireF.png"));
         ImageView wireFSym = new ImageView(img7);
         wireFSym.setFitHeight(symbolSize);
         wireFSym.setFitWidth(symbolSize);
         
-        Image img8 = new Image(getClass().getResourceAsStream("wireHorizontal.png"));
+        Image img8 = new Image(getClass().getResourceAsStream("images/wireHorizontal.png"));
         ImageView wireHorizontalSym = new ImageView(img8);
         wireHorizontalSym.setFitHeight(symbolSize);
         wireHorizontalSym.setFitWidth(symbolSize);
         
-        Image img9 = new Image(getClass().getResourceAsStream("wireJ.png"));
+        Image img9 = new Image(getClass().getResourceAsStream("images/wireJ.png"));
         ImageView wireJSym = new ImageView(img9);
         wireJSym.setFitHeight(symbolSize);
         wireJSym.setFitWidth(symbolSize);
         
-        Image img10 = new Image(getClass().getResourceAsStream("wireL.png"));
+        Image img10 = new Image(getClass().getResourceAsStream("images/wireL.png"));
         ImageView wireLSym = new ImageView(img10);
         wireLSym.setFitHeight(symbolSize);
         wireLSym.setFitWidth(symbolSize);
         
-        Image img11 = new Image(getClass().getResourceAsStream("wireLeftDown.png"));
+        Image img11 = new Image(getClass().getResourceAsStream("images/wireLeftDown.png"));
         ImageView wireLeftDownSym = new ImageView(img11);
         wireLeftDownSym.setFitHeight(symbolSize);
         wireLeftDownSym.setFitWidth(symbolSize);
         
-        Image img13 = new Image(getClass().getResourceAsStream("wireTdown.png"));
+        Image img13 = new Image(getClass().getResourceAsStream("images/wireTdown.png"));
         ImageView wireTdownSym = new ImageView(img13);
         wireTdownSym.setFitHeight(symbolSize);
         wireTdownSym.setFitWidth(symbolSize);
         
-        Image img14 = new Image(getClass().getResourceAsStream("wireTright.png"));
+        Image img14 = new Image(getClass().getResourceAsStream("images/wireTright.png"));
         ImageView wireTrightSym = new ImageView(img14);
         wireTrightSym.setFitHeight(symbolSize);
         wireTrightSym.setFitWidth(symbolSize);
         
-        Image img15 = new Image(getClass().getResourceAsStream("wireTup.png"));
+        Image img15 = new Image(getClass().getResourceAsStream("images/wireTup.png"));
         ImageView wireTupSym = new ImageView(img15);
         wireTupSym.setFitHeight(symbolSize);
         wireTupSym.setFitWidth(symbolSize);
         
-        Image img16 = new Image(getClass().getResourceAsStream("wireVertical.png"));
+        Image img16 = new Image(getClass().getResourceAsStream("images/wireVertical.png"));
         ImageView wireVerticalSym = new ImageView(img16);
         wireVerticalSym.setFitHeight(symbolSize);
         wireVerticalSym.setFitWidth(symbolSize);
         
-        Image img17 = new Image(getClass().getResourceAsStream("wireTleft.png"));
+        Image img17 = new Image(getClass().getResourceAsStream("images/wireTleft.png"));
         ImageView wireTleftSym = new ImageView(img17);
         wireTleftSym.setFitHeight(symbolSize);
         wireTleftSym.setFitWidth(symbolSize);
@@ -184,7 +184,7 @@ public class HelloDragAndDrop extends Application {
                 stpane.setMaxSize(gridSize, gridSize);
                 stpane.setPrefSize(gridSize, gridSize);
                 //stpane.setStyle("-fx-background-color:white");
-                setupGestureTarget(stpane);
+                setupGestureTarget(stpane, i, j);
                 canvasGrid.add(stpane,i,j);
             }
         }
@@ -200,7 +200,6 @@ public class HelloDragAndDrop extends Application {
         source.setOnDragDetected(new EventHandler <MouseEvent>() {
             public void handle(MouseEvent event) {
                 /* drag was detected, start drag-and-drop gesture*/
-                System.out.println("onDragDetected");
                 
                 /* allow any transfer mode */
                 Dragboard db = source.startDragAndDrop(TransferMode.ANY);
@@ -217,7 +216,6 @@ public class HelloDragAndDrop extends Application {
         source.setOnDragDone(new EventHandler <DragEvent>() {
             public void handle(DragEvent event) {
                 /* the drag-and-drop gesture ended */
-                System.out.println("onDragDone");
                 /* if the data was successfully moved, clear it */
                 if (event.getTransferMode() == TransferMode.MOVE) {
                  //   source.setText("");
@@ -232,7 +230,6 @@ public class HelloDragAndDrop extends Application {
         source.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
-                System.out.println("mouse click detected! "+event.getSource());
                 if (event.getButton() == MouseButton.SECONDARY) {
                     System.out.println("Right button clicked");
                 }
@@ -240,11 +237,10 @@ public class HelloDragAndDrop extends Application {
         });
     }
     
-    void setupGestureTarget(Pane target){
+    void setupGestureTarget(Pane target, int i, int j){
          target.setOnDragOver(new EventHandler <DragEvent>() {
             public void handle(DragEvent event) {
                 /* data is dragged over the target */
-                System.out.println("onDragOver");
                 
                 /* accept it only if it is  not dragged from the same node 
                  * and if it has a string data */
@@ -264,7 +260,6 @@ public class HelloDragAndDrop extends Application {
         target.setOnDragEntered(new EventHandler <DragEvent>() {
             public void handle(DragEvent event) {
                 /* the drag-and-drop gesture entered the target */
-                System.out.println("onDragEntered");
                 /* show to the user that it is an actual gesture target */
                 if (event.getGestureSource() != target &&
                         event.getDragboard().hasString()) {
@@ -292,7 +287,6 @@ public class HelloDragAndDrop extends Application {
         target.setOnDragDropped(new EventHandler <DragEvent>() {
             public void handle(DragEvent event) {
                 /* data dropped */
-                System.out.println("onDragDropped");
                 /* if there is a string data on dragboard, read it and use it */
                 Dragboard db = event.getDragboard();
                 boolean success = false;
@@ -312,69 +306,71 @@ public class HelloDragAndDrop extends Application {
                
                         
                 if(component.compareTo("battery")==0){
-                    Image img1 = new Image(getClass().getResourceAsStream("battery.png"));
+                    Image img1 = new Image(getClass().getResourceAsStream("images/battery.png"));
                         iv1.setImage(img1);
                         setupGestureSource(iv1, component);
                         setupMouseClickSource(iv1);
+                        System.out.println(i);
+                        System.out.println(j);
                 }
                 else if(component.compareTo("ammeter")==0){
-                    Image img1 = new Image(getClass().getResourceAsStream("ammeter.png"));
+                    Image img1 = new Image(getClass().getResourceAsStream("images/example.png"));
                         iv1.setImage(img1);
                 }
                 else if(component.compareTo("voltmeter")==0){
-                    Image img1 = new Image(getClass().getResourceAsStream("voltmeter.png"));
+                    Image img1 = new Image(getClass().getResourceAsStream("images/voltmeter.png"));
                         iv1.setImage(img1);
                 }
                 else if(component.compareTo("resistor")==0){
-                    Image img1 = new Image(getClass().getResourceAsStream("resistor.png"));
+                    Image img1 = new Image(getClass().getResourceAsStream("images/resistor.png"));
                         iv1.setImage(img1);
                 }
                 else if(component.compareTo("lamp")==0){
-                    Image img1 = new Image(getClass().getResourceAsStream("lamp.png"));
+                    Image img1 = new Image(getClass().getResourceAsStream("images/lamp.png"));
                         iv1.setImage(img1);
                 }
                 else if(component.compareTo("openswitch")==0){
-                    Image img1 = new Image(getClass().getResourceAsStream("openswitch.png"));
+                    Image img1 = new Image(getClass().getResourceAsStream("images/openswitch.png"));
                         iv1.setImage(img1);
                 }
                 else if(component.compareTo("closedswitch")==0){
-                    Image img1 = new Image(getClass().getResourceAsStream("closedswitch.png"));
+                    Image img1 = new Image(getClass().getResourceAsStream("images/closedswitch.png"));
                         iv1.setImage(img1);
                 }
                 else if(component.compareTo("wireF")==0){
-                    Image img1 = new Image(getClass().getResourceAsStream("wireF.png"));
+                    Image img1 = new Image(getClass().getResourceAsStream("images/wireF.png"));
                         iv1.setImage(img1);
                 }
                 else if(component.compareTo("wireHorizontal")==0){
-                    Image img1 = new Image(getClass().getResourceAsStream("wireHorizontal.png"));
+                    Image img1 = new Image(getClass().getResourceAsStream("images/wireHorizontal.png"));
                         iv1.setImage(img1);
                 }
                 else if(component.compareTo("wireJ")==0){
-                    Image img1 = new Image(getClass().getResourceAsStream("wireJ.png"));
+                    Image img1 = new Image(getClass().getResourceAsStream("images/wireJ.png"));
                         iv1.setImage(img1);
                 }
                 else if(component.compareTo("wireL")==0){
-                    Image img1 = new Image(getClass().getResourceAsStream("wireL.png"));
+                    Image img1 = new Image(getClass().getResourceAsStream("images/wireL.png"));
                         iv1.setImage(img1);
                 }
                 else if(component.compareTo("wireLeftDown")==0){
-                    Image img1 = new Image(getClass().getResourceAsStream("wireLeftDown.png"));
+                    Image img1 = new Image(getClass().getResourceAsStream("images/wireLeftDown.png"));
                         iv1.setImage(img1);
                 }
                 else if(component.compareTo("wireTdown")==0){
-                    Image img1 = new Image(getClass().getResourceAsStream("wireTdown.png"));
+                    Image img1 = new Image(getClass().getResourceAsStream("images/wireTdown.png"));
                         iv1.setImage(img1);
                 }
                 else if(component.compareTo("wireTleft")==0){
-                    Image img1 = new Image(getClass().getResourceAsStream("wireTleft.png"));
+                    Image img1 = new Image(getClass().getResourceAsStream("images/wireTleft.png"));
                         iv1.setImage(img1);
                 }
                 else if(component.compareTo("wireTup")==0){
-                    Image img1 = new Image(getClass().getResourceAsStream("wireTup.png"));
+                    Image img1 = new Image(getClass().getResourceAsStream("images/wireTup.png"));
                         iv1.setImage(img1);
                 }
                 else if(component.compareTo("wireVertical")==0){
-                    Image img1 = new Image(getClass().getResourceAsStream("wireVertical.png"));
+                    Image img1 = new Image(getClass().getResourceAsStream("images/wireVertical.png"));
                         iv1.setImage(img1);
                 }
                 
@@ -390,6 +386,8 @@ public class HelloDragAndDrop extends Application {
             }
         });
     }
+    
+
     
     public static void main(String[] args) {
         Application.launch(args);
