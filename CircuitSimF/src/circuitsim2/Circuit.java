@@ -5,11 +5,15 @@
  */
 package circuitsim2;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Anita
  */
-public class Circuit {
+public class Circuit implements Serializable{
+    
+    private static final long serialVersionUID = 1L;
     Component[][] grid = new Component[13][9];
     
     public void setComponent(Component c,int i, int j){

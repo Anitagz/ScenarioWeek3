@@ -6,6 +6,12 @@
 
 package circuitsim2;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -20,7 +26,6 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.*;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -212,13 +217,52 @@ public class HelloDragAndDrop extends Application {
         grid.add(bside, 1,2); 
         
         Button runButton = new Button("Run");
-        bside.getChildren().addAll(runButton);
+        Button saveButton = new Button("Save");
+        Button openButton = new Button("Open");
+        bside.getChildren().addAll(runButton,saveButton,openButton);
         
         runButton.setOnAction(new EventHandler<ActionEvent>() {
-                            @Override public void handle(ActionEvent e) {
-                                circuit.run();
-                            }
-                        });
+            @Override public void handle(ActionEvent e) {
+                circuit.run();
+            }
+        });
+        
+        saveButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+                try{
+                    FileOutputStream fos = new FileOutputStream("mycircuit.cir");
+                    ObjectOutputStream oos = new ObjectOutputStream(fos);
+                    oos.writeObject(circuit);
+                    oos.close();
+                }catch (FileNotFoundException ex) {
+			ex.printStackTrace();
+		} catch (IOException ex) {
+			ex.printStackTrace();
+		}
+                
+            }
+        });
+        
+        openButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+                try{
+                    FileInputStream fis = new FileInputStream("mycircuit.cir");
+                    ObjectInputStream ois = new ObjectInputStream(fis);
+                    Circuit result = (Circuit) ois.readObject();
+                    ois.close();
+                    if(result.getComponent(0, 0) instanceof Battery){
+                        System.out.println("it works");
+                    }
+                }catch (FileNotFoundException ex) {
+			ex.printStackTrace();
+		}catch (IOException ex) {
+			ex.printStackTrace();
+		}catch (ClassNotFoundException ex) {
+			ex.printStackTrace();
+		}
+                
+            }
+        });
         
         stage.setScene(scene);
         stage.show();

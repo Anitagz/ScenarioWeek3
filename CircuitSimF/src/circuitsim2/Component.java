@@ -5,12 +5,14 @@
  */
 package circuitsim2;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Anita
  */
 
-public class Component {
+public class Component implements Serializable{
     private String name;
     
     
