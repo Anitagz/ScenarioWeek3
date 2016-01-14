@@ -10,7 +10,7 @@ package circuitsim2;
  * @author Anita
  */
 public class Circuit {
-    Component[][] grid = new Component[9][13];
+    Component[][] grid = new Component[13][9];
     
     public void setComponent(Component c,int i, int j){
         grid[i][j] = c;
