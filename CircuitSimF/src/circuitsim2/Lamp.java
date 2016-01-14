@@ -14,23 +14,28 @@ public class Lamp extends Component{
     private boolean on;
     private double resistance;
     
-public int getStatus(){
-    return on;
+    public Lamp(String name, double resistance){
+        super(name);
+        this.resistance = resistance;
+    }
     
-}  
+    public boolean getStatus(){
+        return on;
 
-public void setStatus(boolean status){
-    this.on=status;
-}
+    }  
 
-
-public void setResistance(double r) {
-        this.resistance = r;
+    public void setStatus(boolean status){
+        this.on=status;
     }
 
-    public double getResistance(){
-        return resistance;
-  } 
+
+    public void setResistance(double r) {
+            this.resistance = r;
+        }
+
+        public double getResistance(){
+            return resistance;
+      } 
 }
 
     

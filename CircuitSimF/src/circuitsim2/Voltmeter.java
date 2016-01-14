@@ -12,20 +12,22 @@ package circuitsim2;
 public class Voltmeter extends Component{
     
     
-    Lamp lamp = new Lamp();
-    Resistor resistor = new Resistor();
-    Switchh swtch = new Switchh();
-    Ammeter ammeter = new Ammeter();
+    //Lamp lamp = new Lamp();
+    //Resistor resistor = new Resistor();
+    //Switchh swtch = new Switchh();
+    //Ammeter ammeter = new Ammeter();
     
   
  
     private double lampvoltage;
     private double resistorvoltage;
     
+    public Voltmeter(String name){
+        super(name);
+    }
     
     
-    
-            
+     /*       
     public double calculateLampVoltage()
     {
         
@@ -66,6 +68,6 @@ public class Voltmeter extends Component{
          return resistorvoltage;
         }
     }
-    
+    */
     
 }

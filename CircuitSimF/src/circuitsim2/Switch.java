@@ -13,6 +13,10 @@ public class Switch extends Component{
     
     boolean open;
     
+    public Switch(String name){
+        super(name);
+    }
+    
     public void setStatus(boolean o)
     {
         this.open=o;

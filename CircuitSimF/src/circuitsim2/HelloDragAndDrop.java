@@ -250,14 +250,15 @@ public class HelloDragAndDrop extends Application {
                     if (circuit.getComponent(i,j) instanceof Battery){
                         Battery b = (Battery) circuit.getComponent(i,j);
                         double vol = b.getVoltage();
-                        Label lab = new Label("The Voltage is "+vol);
-                        System.out.println(vol);
-                        rside.getChildren().addAll(lab);
+                        Label lab1 = new Label("The Voltage");
+                        TextField tf1 = new TextField(String.valueOf(vol));
+                        Button submit = new Button("Done");
+                        rside.getChildren().addAll(lab1, tf1, submit);
                     }
                     else if (circuit.getComponent(i,j) instanceof Lamp){
                         Lamp b = (Lamp) circuit.getComponent(i,j);
                         double res = b.getResistance();
-                        double status = b.getStatus();
+                        double status = 0;//b.getStatus();
                         Label lab1 = new Label("the status is"+status);
                         Label lab = new Label("The resistance is"+res);
                         rside.getChildren().addAll(lab);
@@ -265,14 +266,14 @@ public class HelloDragAndDrop extends Application {
                     }
                     else if (circuit.getComponent(i,j) instanceof Voltmeter){
                         Voltmeter b = (Voltmeter) circuit.getComponent(i,j);
-                        double vol = b.getVoltage();
+                        double vol = 0;//b.getVoltage();
                         Label lab = new Label("The Voltage is "+vol);
                         System.out.println(vol);
                         rside.getChildren().addAll(lab);
                     }
                     else if (circuit.getComponent(i,j) instanceof Ammeter){
                         Ammeter b = (Ammeter) circuit.getComponent(i,j);
-                        double cur = b.getCurrent();
+                        double cur = 0;//b.getCurrent();
                         Label lab = new Label("The cuurent is "+cur);
                         System.out.println(cur);
                         rside.getChildren().addAll(lab);
@@ -283,11 +284,6 @@ public class HelloDragAndDrop extends Application {
                         Label lab = new Label("The Resistance is "+res);
                         System.out.println(res);
                         rside.getChildren().addAll(lab);
-                        Label lab = new Label("The Voltage");
-                        TextField tf1 = new TextField(String.valueOf(vol));
-                        Button submit = new Button("Done");
-                        System.out.println(vol);
-                        rside.getChildren().addAll(lab, tf1, submit);
                     }
                 }
             }

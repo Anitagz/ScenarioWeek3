@@ -13,6 +13,11 @@ public class Resistor extends Component{
     
     private double resistance;
     
+    public Resistor(String name, double resistance){
+        super(name);
+        this.resistance = resistance;
+    }
+    
     public void setResistance(double r) {
         this.resistance = r;
 }
