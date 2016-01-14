@@ -257,7 +257,13 @@ public class HelloDragAndDrop extends Application {
                         submit.setOnAction(new EventHandler<ActionEvent>() {
                             @Override public void handle(ActionEvent e) {
                                 System.out.println("clicked");
-                                //b.setVoltage(submit.);
+                                try{
+                                    double inputVol = Double.parseDouble(tf1.getText());
+                                    b.setVoltage(inputVol);
+                                }catch(NumberFormatException ex){
+                                    System.out.println("Non-numeric character exist");
+                                }
+                                
                             }
                         });
                         rside.getChildren().addAll(lab1, tf1, submit);
@@ -266,10 +272,24 @@ public class HelloDragAndDrop extends Application {
                         Lamp b = (Lamp) circuit.getComponent(i,j);
                         double res = b.getResistance();
                         double status = 0;//b.getStatus();
-                        Label lab1 = new Label("the status is"+status);
-                        Label lab = new Label("The resistance is"+res);
-                        rside.getChildren().addAll(lab);
-                        rside.getChildren().addAll(lab1);
+                        //Label lab = new Label("The resistance is"+res);
+                        Label lab = new Label("The Resistance");
+                        TextField tf1 = new TextField(String.valueOf(res));
+                        Button submit = new Button("Done");
+                        submit.setOnAction(new EventHandler<ActionEvent>() {
+                            @Override public void handle(ActionEvent e) {
+                                System.out.println("clicked");
+                                try{
+                                    double inputRes = Double.parseDouble(tf1.getText());
+                                    b.setResistance(inputRes);
+                                }catch(NumberFormatException ex){
+                                    System.out.println("Non-numeric character exist");
+                                }
+                                
+                            }
+                        });
+                        Label lab1 = new Label("\nthe status is"+status);
+                        rside.getChildren().addAll(lab, tf1, submit,lab1);
                     }
                     else if (circuit.getComponent(i,j) instanceof Voltmeter){
                         Voltmeter b = (Voltmeter) circuit.getComponent(i,j);
@@ -288,9 +308,22 @@ public class HelloDragAndDrop extends Application {
                     else if (circuit.getComponent(i,j) instanceof Resistor){
                         Resistor b = (Resistor) circuit.getComponent(i,j);
                         double res = b.getResistance();
-                        Label lab = new Label("The Resistance is "+res);
-                        System.out.println(res);
-                        rside.getChildren().addAll(lab);
+                        Label lab = new Label("The Resistance");
+                        TextField tf1 = new TextField(String.valueOf(res));
+                        Button submit = new Button("Done");
+                        submit.setOnAction(new EventHandler<ActionEvent>() {
+                            @Override public void handle(ActionEvent e) {
+                                System.out.println("clicked");
+                                try{
+                                    double inputRes = Double.parseDouble(tf1.getText());
+                                    b.setResistance(inputRes);
+                                }catch(NumberFormatException ex){
+                                    System.out.println("Non-numeric character exist");
+                                }
+                                
+                            }
+                        });
+                        rside.getChildren().addAll(lab, tf1, submit);
                     }
                 }
             }
