@@ -32,6 +32,7 @@ public class HelloDragAndDrop extends Application {
 
     Circuit circuit = new Circuit();
     VBox rside = new VBox(2);
+    VBox bside = new VBox(2);
     
     @Override public void start(Stage stage) {
         stage.setTitle("Hello Drag And Drop");
@@ -39,7 +40,7 @@ public class HelloDragAndDrop extends Application {
         Group root = new Group();
         
         GridPane grid = new GridPane();
-        Scene scene = new Scene(grid, 960, 490);
+        Scene scene = new Scene(grid, 960, 590);
         
         
         //grid.setAlignment(Pos.CENTER);
@@ -204,6 +205,11 @@ public class HelloDragAndDrop extends Application {
         rside.setStyle("-fx-padding: 10; -fx-background-color: aliceblue;");
         grid.add(rside, 2,1);   
         
+        bside.setMinSize(gridSize*13, gridSize*2);;
+        bside.setMaxSize(gridSize, gridSize);
+        bside.setPrefSize(gridSize*4, gridSize*9);
+        bside.setStyle("-fx-padding: 10; -fx-background-color: aliceblue;");
+        grid.add(bside, 1,2); 
         
         stage.setScene(scene);
         stage.show();
