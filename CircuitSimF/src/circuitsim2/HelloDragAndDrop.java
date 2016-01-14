@@ -403,7 +403,7 @@ public class HelloDragAndDrop extends Application {
                         setupMouseClickSource(iv1,i,j);
                         //System.out.println(i);
                         //System.out.println(j);
-                        Resistor res = new Resistor("resistor1");
+                        Resistor res = new Resistor("resistor1",6);
                         circuit.setComponent(res, i, j);
                 }
                 else if(component.compareTo("lamp")==0){
@@ -413,7 +413,7 @@ public class HelloDragAndDrop extends Application {
                         setupMouseClickSource(iv1,i,j);
                         //System.out.println(i);
                         //System.out.println(j);
-                        Lamp lamp = new Lamp("lamp1");
+                        Lamp lamp = new Lamp("lamp1",3);
                         circuit.setComponent(lamp, i, j);
                 }
                 else if(component.compareTo("openswitch")==0){
