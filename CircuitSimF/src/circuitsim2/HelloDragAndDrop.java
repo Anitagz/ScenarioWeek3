@@ -39,7 +39,7 @@ public class HelloDragAndDrop extends Application {
         Group root = new Group();
         
         GridPane grid = new GridPane();
-        Scene scene = new Scene(grid, 1000, 500);
+        Scene scene = new Scene(grid, 960, 490);
         
         
         //grid.setAlignment(Pos.CENTER);
@@ -201,7 +201,7 @@ public class HelloDragAndDrop extends Application {
         rside.setMinSize(gridSize*4, gridSize*9);;
         rside.setMaxSize(gridSize, gridSize);
         rside.setPrefSize(gridSize*4, gridSize*9);
-        rside.setStyle("-fx-padding: 10; -fx-background-color: cornsilk;");
+        rside.setStyle("-fx-padding: 10; -fx-background-color: aliceblue;");
         grid.add(rside, 2,1);   
         
         
