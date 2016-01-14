@@ -16,6 +16,9 @@ public class Circuit implements Serializable{
     private static final long serialVersionUID = 1L;
     Component[][] grid = new Component[13][9];
     int[][] start = new int[2][1];
+    double totalRes = 0;
+    double totalVolt = 0;
+    boolean isAmm = false;
     
     public void setComponent(Component c,int i, int j){
         grid[i][j] = c;
@@ -43,6 +46,8 @@ public class Circuit implements Serializable{
         
         if(i==start[0][0] && j==start[1][0]){
             System.out.println("It works! :D");
+            System.out.println("totalres: "+totalRes);
+            System.out.println("totalvolt: "+totalVolt);
         }
         
         else if(side.compareTo("left")==0){
@@ -67,18 +72,25 @@ public class Circuit implements Serializable{
             else{
             //Components
             if(grid[i][j] instanceof Ammeter){
+                isAmm = true;
                 startCheck(i+1, j, "left");
             }
             if(grid[i][j] instanceof Lamp){
+                Lamp eg = (Lamp) grid[i][j];
+                totalRes+=eg.getResistance();
                 startCheck(i+1, j, "left");
             }
             if(grid[i][j] instanceof Battery){
+                Battery eg = (Battery) grid[i][j];
+                totalRes+=eg.getVoltage();
                 startCheck(i+1, j, "left");
             }
             if(grid[i][j] instanceof Switch){
                 startCheck(i+1, j, "left");
             }
             if(grid[i][j] instanceof Resistor){
+                Resistor eg = (Resistor) grid[i][j];
+                totalRes+=eg.getResistance();
                 startCheck(i+1, j, "left");
             }
             else{
@@ -109,18 +121,25 @@ public class Circuit implements Serializable{
             //Components
             else{
             if(grid[i][j] instanceof Ammeter){
+                isAmm = true;
                 startCheck(i-1, j, "right");
             }
             else if(grid[i][j] instanceof Lamp){
+                Lamp eg = (Lamp) grid[i][j];
+                totalRes+=eg.getResistance();
                 startCheck(i-1, j, "right");
             }
             else if(grid[i][j] instanceof Battery){
+                Battery eg = (Battery) grid[i][j];
+                totalRes+=eg.getVoltage();
                 startCheck(i-1, j, "right");
             }
             else if(grid[i][j] instanceof Switch){
                 startCheck(i-1, j, "right");
             }
             else if(grid[i][j] instanceof Resistor){
+                Resistor eg = (Resistor) grid[i][j];
+                totalRes+=eg.getResistance();
                 startCheck(i-1, j, "left");
             }
             else{
