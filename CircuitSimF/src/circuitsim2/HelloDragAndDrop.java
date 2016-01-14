@@ -257,6 +257,7 @@ public class HelloDragAndDrop extends Application {
                         submit.setOnAction(new EventHandler<ActionEvent>() {
                             @Override public void handle(ActionEvent e) {
                                 System.out.println("clicked");
+                                //b.setVoltage(submit.);
                             }
                         });
                         rside.getChildren().addAll(lab1, tf1, submit);
