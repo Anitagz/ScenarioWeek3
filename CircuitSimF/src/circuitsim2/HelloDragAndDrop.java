@@ -37,7 +37,7 @@ public class HelloDragAndDrop extends Application {
 
     Circuit circuit = new Circuit();
     VBox rside = new VBox(2);
-    VBox bside = new VBox(2);
+    GridPane bside = new GridPane();
     
     @Override public void start(Stage stage) {
         stage.setTitle("Hello Drag And Drop");
@@ -220,7 +220,13 @@ public class HelloDragAndDrop extends Application {
         Button saveButton = new Button("Save");
         Button openButton = new Button("Open");
         Button clearButton = new Button("Clear");
-        bside.getChildren().addAll(runButton,saveButton,openButton,clearButton);
+        bside.setHgap(5);
+        bside.setVgap(5);
+        //bside.getChildren().addAll(runButton,saveButton,openButton,clearButton);
+        bside.add(runButton, 0, 0);
+        bside.add(saveButton, 1, 0);
+        bside.add(openButton, 2, 0);
+        bside.add(clearButton, 3, 0);
         
         runButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {

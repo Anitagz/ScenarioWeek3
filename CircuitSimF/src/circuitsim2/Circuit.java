@@ -36,10 +36,17 @@ public class Circuit implements Serializable{
                 if(grid[i][j] instanceof Battery){
                     start[0][0] = i;
                     start[1][0] = j;
+                    Battery eg = (Battery) grid[i][j];
+                    totalVolt+=eg.getVoltage();
                     startCheck(i+1, j, "left");
                 }
             }
         }
+    }
+    
+    public void printCurrent(){
+        double current = totalVolt/totalRes;
+        System.out.println();
     }
     
     public void startCheck(int i, int j, String side){
@@ -48,6 +55,9 @@ public class Circuit implements Serializable{
             System.out.println("It works! :D");
             System.out.println("totalres: "+totalRes);
             System.out.println("totalvolt: "+totalVolt);
+            if(isAmm = true){
+                printCurrent();
+            }
         }
         
         else if(side.compareTo("left")==0){
