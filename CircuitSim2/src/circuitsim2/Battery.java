@@ -9,15 +9,17 @@ package circuitsim2;
  *
  * @author Anita
  */
-//public class Battery extends Component{
+public class Battery extends Component{
     
-    //private 
+    private String name;
     
-            /*
     public Battery(String n){
-        super(n);
-        this.name = n;
+        //super(n);
+        //this.name = n;
         
-    }*/
+        
+    }
     
-//}
+
+    
+}
