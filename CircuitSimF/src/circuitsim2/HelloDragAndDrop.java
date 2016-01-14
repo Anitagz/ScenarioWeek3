@@ -7,6 +7,7 @@
 package circuitsim2;
 
 import javafx.application.Application;
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -253,6 +254,11 @@ public class HelloDragAndDrop extends Application {
                         Label lab1 = new Label("The Voltage");
                         TextField tf1 = new TextField(String.valueOf(vol));
                         Button submit = new Button("Done");
+                        submit.setOnAction(new EventHandler<ActionEvent>() {
+                            @Override public void handle(ActionEvent e) {
+                                System.out.println("clicked");
+                            }
+                        });
                         rside.getChildren().addAll(lab1, tf1, submit);
                     }
                     else if (circuit.getComponent(i,j) instanceof Lamp){
