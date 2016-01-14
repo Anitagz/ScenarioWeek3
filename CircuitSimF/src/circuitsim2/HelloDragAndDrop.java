@@ -10,6 +10,7 @@ import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.image.Image;
@@ -17,7 +18,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.*;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
-import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 /**
@@ -25,12 +26,13 @@ import javafx.stage.Stage;
  */
 public class HelloDragAndDrop extends Application {
 
+    Circuit circuit = new Circuit();
+    VBox rside = new VBox(2);
+    
     @Override public void start(Stage stage) {
         stage.setTitle("Hello Drag And Drop");
 
         Group root = new Group();
-        
-        Circuit circuit = new Circuit();
         
         GridPane grid = new GridPane();
         Scene scene = new Scene(grid, 1000, 500);
@@ -46,7 +48,7 @@ public class HelloDragAndDrop extends Application {
         Menu menuEdit = new Menu("Edit");
         Menu menuHelp = new Menu("Help");
         menuBar.getMenus().addAll(menuFile, menuEdit, menuHelp);
-        grid.add(menuBar, 0, 0, 2, 1);
+        grid.add(menuBar, 0, 0, 3, 1);
         
         int symbolSize = 50;
         
@@ -191,11 +193,13 @@ public class HelloDragAndDrop extends Application {
             }
         }
         
-        StackPane rpane = new StackPane();
-        rpane.setMinSize(gridSize, gridSize);
-        rpane.setMaxSize(gridSize, gridSize);
-        rpane.setPrefSize(gridSize, gridSize);
-        grid.add(rpane, 2,1);        
+        
+        rside.setMinSize(gridSize*4, gridSize*9);;
+        rside.setMaxSize(gridSize, gridSize);
+        rside.setPrefSize(gridSize*4, gridSize*9);
+        rside.setStyle("-fx-padding: 10; -fx-background-color: cornsilk;");
+        grid.add(rside, 2,1);   
+        
         
         stage.setScene(scene);
         stage.show();
@@ -239,6 +243,14 @@ public class HelloDragAndDrop extends Application {
                 if (event.getButton() == MouseButton.PRIMARY) {
                     System.out.println("Left button clicked");
                     System.out.println("i = "+ i + " j = " + j);
+                    rside.getChildren().clear();
+                    if (circuit.getComponent(i,j) instanceof Battery){
+                        Battery b = (Battery) circuit.getComponent(i,j);
+                        double vol = b.getVoltage();
+                    Label lab = new Label("The Voltage is "+vol);
+                    System.out.println(vol);
+                    rside.getChildren().addAll(lab);
+                    }
                 }
             }
         });
@@ -317,9 +329,12 @@ public class HelloDragAndDrop extends Application {
                         iv1.setImage(img1);
                         setupGestureSource(iv1, component);
                         setupMouseClickSource(iv1,i,j);
-                        System.out.println(i);
-                        System.out.println(j);
+                        //System.out.println(i);
+                        //System.out.println(j);
+                        Battery bat = new Battery("battery1");
+                        circuit.setComponent(bat, i, j);
                         
+
                 }
                 else if(component.compareTo("ammeter")==0){
                     Image img1 = new Image(getClass().getResourceAsStream("Images/ammeter.png"));

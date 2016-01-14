@@ -18,5 +18,8 @@ public class Component {
         this.name = n;
     }
 
+    public String getName(){
+        return name;
+    }
 }
 

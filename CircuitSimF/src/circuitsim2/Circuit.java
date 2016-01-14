@@ -12,7 +12,13 @@ package circuitsim2;
 public class Circuit {
     Component[][] grid = new Component[9][13];
     
-    public void addTo(Component c,int i, int j){
+    public void setComponent(Component c,int i, int j){
         grid[i][j] = c;
     }
+    
+    public Component getComponent(int i, int j){
+        //(E)return grid[i][j];
+        return grid[i][j];
+    }
+    
 }
