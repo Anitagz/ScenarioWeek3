@@ -36,8 +36,13 @@ public class Circuit implements Serializable{
                 if(grid[i][j] instanceof Battery){
                     start[0][0] = i;
                     start[1][0] = j;
+<<<<<<< HEAD
                     Battery eg = (Battery) grid[i][j];
                     totalVolt+=eg.getVoltage();
+=======
+                    Battery b = (Battery) grid[i][j];
+                    totalVolt += b.getVoltage();
+>>>>>>> origin/master
                     startCheck(i+1, j, "left");
                 }
             }
