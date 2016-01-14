@@ -19,9 +19,9 @@ public class Ammeter extends Component{
     
     private double current;
     
-    public Ammeter(String name, double current){
+    public Ammeter(String name){
         super(name);
-        this.current = current;
+        //this.current = current;
     }
     /*
     public double getCurrent()
