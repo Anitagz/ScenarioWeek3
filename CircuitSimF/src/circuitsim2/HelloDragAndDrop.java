@@ -373,62 +373,152 @@ public class HelloDragAndDrop extends Application {
                 else if(component.compareTo("ammeter")==0){
                     Image img1 = new Image(getClass().getResourceAsStream("Images/ammeter.png"));
                         iv1.setImage(img1);
+                        setupGestureSource(iv1, component);
+                        setupMouseClickSource(iv1,i,j);
+                        //System.out.println(i);
+                        //System.out.println(j);
+                        Ammeter amm = new Ammeter("ammeter1");
+                        circuit.setComponent(amm, i, j);
                 }
                 else if(component.compareTo("voltmeter")==0){
                     Image img1 = new Image(getClass().getResourceAsStream("Images/voltmeter.png"));
                         iv1.setImage(img1);
+                        setupGestureSource(iv1, component);
+                        setupMouseClickSource(iv1,i,j);
+                        //System.out.println(i);
+                        //System.out.println(j);
+                        Voltmeter volt = new Voltmeter("voltmeter1");
+                        circuit.setComponent(volt, i, j);
                 }
                 else if(component.compareTo("resistor")==0){
                     Image img1 = new Image(getClass().getResourceAsStream("Images/resistor.png"));
                         iv1.setImage(img1);
+                        setupGestureSource(iv1, component);
+                        setupMouseClickSource(iv1,i,j);
+                        //System.out.println(i);
+                        //System.out.println(j);
+                        Resistor res = new Resistor("resistor1");
+                        circuit.setComponent(res, i, j);
                 }
                 else if(component.compareTo("lamp")==0){
                     Image img1 = new Image(getClass().getResourceAsStream("Images/lamp.png"));
                         iv1.setImage(img1);
+                        setupGestureSource(iv1, component);
+                        setupMouseClickSource(iv1,i,j);
+                        //System.out.println(i);
+                        //System.out.println(j);
+                        Lamp lamp = new Lamp("lamp1");
+                        circuit.setComponent(lamp, i, j);
                 }
                 else if(component.compareTo("openswitch")==0){
                     Image img1 = new Image(getClass().getResourceAsStream("Images/openswitch.png"));
                         iv1.setImage(img1);
+                        setupGestureSource(iv1, component);
+                        setupMouseClickSource(iv1,i,j);
+                        //System.out.println(i);
+                        //System.out.println(j);
+                        Switch swi = new Switch("switch1");
+                        circuit.setComponent(swi, i, j);
                 }
                 else if(component.compareTo("closedswitch")==0){
                     Image img1 = new Image(getClass().getResourceAsStream("Images/closedswitch.png"));
                         iv1.setImage(img1);
+                        setupGestureSource(iv1, component);
+                        setupMouseClickSource(iv1,i,j);
+                        //System.out.println(i);
+                        //System.out.println(j);
+                        Switch swi = new Switch("switch1");
+                        circuit.setComponent(swi, i, j);
                 }
                 else if(component.compareTo("wireF")==0){
                     Image img1 = new Image(getClass().getResourceAsStream("Images/wireF.png"));
                         iv1.setImage(img1);
+                        setupGestureSource(iv1, component);
+                        setupMouseClickSource(iv1,i,j);
+                        //System.out.println(i);
+                        //System.out.println(j);
+                        Wire wiref = new Wire("wire1");
+                        circuit.setComponent(wiref, i, j);
                 }
                 else if(component.compareTo("wireHorizontal")==0){
                     Image img1 = new Image(getClass().getResourceAsStream("Images/wireHorizontal.png"));
                         iv1.setImage(img1);
+                        setupGestureSource(iv1, component);
+                        setupMouseClickSource(iv1,i,j);
+                        //System.out.println(i);
+                        //System.out.println(j);
+                        Wire wirehoriz = new Wire("wire2");
+                        circuit.setComponent(wirehoriz, i, j);
                 }
                 else if(component.compareTo("wireJ")==0){
                     Image img1 = new Image(getClass().getResourceAsStream("Images/wireJ.png"));
                         iv1.setImage(img1);
+                        setupGestureSource(iv1, component);
+                        setupMouseClickSource(iv1,i,j);
+                        //System.out.println(i);
+                        //System.out.println(j);
+                        Wire wirej = new Wire("wire3");
+                        circuit.setComponent(wirej, i, j);
                 }
                 else if(component.compareTo("wireL")==0){
                     Image img1 = new Image(getClass().getResourceAsStream("Images/wireL.png"));
                         iv1.setImage(img1);
+                        setupGestureSource(iv1, component);
+                        setupMouseClickSource(iv1,i,j);
+                        //System.out.println(i);
+                        //System.out.println(j);
+                        Wire wirel = new Wire("wire4");
+                        circuit.setComponent(wirel, i, j);
                 }
                 else if(component.compareTo("wireLeftDown")==0){
                     Image img1 = new Image(getClass().getResourceAsStream("Images/wireLeftDown.png"));
                         iv1.setImage(img1);
+                        setupGestureSource(iv1, component);
+                        setupMouseClickSource(iv1,i,j);
+                        //System.out.println(i);
+                        //System.out.println(j);
+                        Wire wireleftdown = new Wire("wire5");
+                        circuit.setComponent(wireleftdown, i, j);
                 }
                 else if(component.compareTo("wireTdown")==0){
                     Image img1 = new Image(getClass().getResourceAsStream("Images/wireTdown.png"));
                         iv1.setImage(img1);
+                        setupGestureSource(iv1, component);
+                        setupMouseClickSource(iv1,i,j);
+                        //System.out.println(i);
+                        //System.out.println(j);
+                        Wire wiretdown = new Wire("wire6");
+                        circuit.setComponent(wiretdown, i, j);
                 }
                 else if(component.compareTo("wireTleft")==0){
                     Image img1 = new Image(getClass().getResourceAsStream("Images/wireTleft.png"));
                         iv1.setImage(img1);
+                        setupGestureSource(iv1, component);
+                        setupMouseClickSource(iv1,i,j);
+                        //System.out.println(i);
+                        //System.out.println(j);
+                        Wire wiretleft = new Wire("wire7");
+                        circuit.setComponent(wiretleft, i, j);
                 }
                 else if(component.compareTo("wireTup")==0){
                     Image img1 = new Image(getClass().getResourceAsStream("Images/wireTup.png"));
                         iv1.setImage(img1);
+                        setupGestureSource(iv1, component);
+                        setupMouseClickSource(iv1,i,j);
+                        //System.out.println(i);
+                        //System.out.println(j);
+                        Wire wiretup = new Wire("wire8");
+                        circuit.setComponent(wiretup, i, j);
                 }
                 else if(component.compareTo("wireVertical")==0){
                     Image img1 = new Image(getClass().getResourceAsStream("Images/wireVertical.png"));
                         iv1.setImage(img1);
+                        setupGestureSource(iv1, component);
+                        setupMouseClickSource(iv1,i,j);
+                        //System.out.println(i);
+                        //System.out.println(j);
+                        Wire wirevertical = new Wire("wire9");
+                        circuit.setComponent(wirevertical, i, j);
                 }
                 
                 
