@@ -248,12 +248,14 @@ public class HelloDragAndDrop extends Application {
                     System.out.println("Left button clicked");
                     System.out.println("i = "+ i + " j = " + j);
                     rside.getChildren().clear();
+                    
                     if (circuit.getComponent(i,j) instanceof Battery){
                         Battery b = (Battery) circuit.getComponent(i,j);
                         double vol = b.getVoltage();
                         Label lab1 = new Label("The Voltage");
                         TextField tf1 = new TextField(String.valueOf(vol));
                         Button submit = new Button("Done");
+                        Label lab2 = new Label("\nThe voltage is "+b.getVoltage());
                         submit.setOnAction(new EventHandler<ActionEvent>() {
                             @Override public void handle(ActionEvent e) {
                                 System.out.println("clicked");
@@ -263,10 +265,10 @@ public class HelloDragAndDrop extends Application {
                                 }catch(NumberFormatException ex){
                                     System.out.println("Non-numeric character exist");
                                 }
-                                
+                                lab2.setText("\nThe voltage is "+tf1.getText());
                             }
                         });
-                        rside.getChildren().addAll(lab1, tf1, submit);
+                        rside.getChildren().addAll(lab1, tf1, submit, lab2);
                     }
                     else if (circuit.getComponent(i,j) instanceof Lamp){
                         Lamp b = (Lamp) circuit.getComponent(i,j);
@@ -276,6 +278,8 @@ public class HelloDragAndDrop extends Application {
                         Label lab = new Label("The Resistance");
                         TextField tf1 = new TextField(String.valueOf(res));
                         Button submit = new Button("Done");
+                        Label lab1 = new Label("\nThe status is "+status);
+                        Label lab2 = new Label("The resistance is "+b.getResistance());
                         submit.setOnAction(new EventHandler<ActionEvent>() {
                             @Override public void handle(ActionEvent e) {
                                 System.out.println("clicked");
@@ -285,11 +289,10 @@ public class HelloDragAndDrop extends Application {
                                 }catch(NumberFormatException ex){
                                     System.out.println("Non-numeric character exist");
                                 }
-                                
+                                lab2.setText("The resistance is "+tf1.getText()); 
                             }
                         });
-                        Label lab1 = new Label("\nthe status is"+status);
-                        rside.getChildren().addAll(lab, tf1, submit,lab1);
+                        rside.getChildren().addAll(lab, tf1, submit,lab1, lab2);
                     }
                     else if (circuit.getComponent(i,j) instanceof Voltmeter){
                         Voltmeter b = (Voltmeter) circuit.getComponent(i,j);
@@ -304,13 +307,14 @@ public class HelloDragAndDrop extends Application {
                         Label lab = new Label("The cuurent is "+cur);
                         System.out.println(cur);
                         rside.getChildren().addAll(lab);
-                    }
+                    }                
                     else if (circuit.getComponent(i,j) instanceof Resistor){
                         Resistor b = (Resistor) circuit.getComponent(i,j);
                         double res = b.getResistance();
                         Label lab = new Label("The Resistance");
                         TextField tf1 = new TextField(String.valueOf(res));
                         Button submit = new Button("Done");
+                        Label lab1 = new Label("\nThe resistance is "+b.getResistance());
                         submit.setOnAction(new EventHandler<ActionEvent>() {
                             @Override public void handle(ActionEvent e) {
                                 System.out.println("clicked");
@@ -320,10 +324,10 @@ public class HelloDragAndDrop extends Application {
                                 }catch(NumberFormatException ex){
                                     System.out.println("Non-numeric character exist");
                                 }
-                                
+                                lab1.setText("\nThe resistance is "+tf1.getText());
                             }
                         });
-                        rside.getChildren().addAll(lab, tf1, submit);
+                        rside.getChildren().addAll(lab, tf1, submit, lab1);
                     }
                 }
             }
