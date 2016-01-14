@@ -38,6 +38,7 @@ public class HelloDragAndDrop extends Application {
     Circuit circuit = new Circuit();
     VBox rside = new VBox(2);
     GridPane bside = new GridPane();
+    Label paneLabel = new Label("");
     
     @Override public void start(Stage stage) {
         stage.setTitle("Hello Drag And Drop");
@@ -220,17 +221,31 @@ public class HelloDragAndDrop extends Application {
         Button saveButton = new Button("Save");
         Button openButton = new Button("Open");
         Button clearButton = new Button("Clear");
-        bside.setHgap(5);
+        bside.setHgap(10);
         bside.setVgap(5);
         //bside.getChildren().addAll(runButton,saveButton,openButton,clearButton);
         bside.add(runButton, 0, 0);
         bside.add(saveButton, 1, 0);
         bside.add(openButton, 2, 0);
         bside.add(clearButton, 3, 0);
+        bside.add(paneLabel, 0, 1, 4, 1);
+        
         
         runButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
                 circuit.run();
+                if(circuit.isInvalid == true){
+                    paneLabel.setText("The circuit is Invalid!");
+                    //bside.add(lab, 0, 1, 4, 1);
+                }
+                else if(circuit.isAmm == true){
+                    double curr = circuit.getTotalCurrent();
+                    /*
+                    Label lab = new Label("The current measured by the Ammeter is: "+curr+"A");
+                    bside.add(lab, 0, 1, 4, 1);
+                    */
+                    paneLabel.setText("The current measured by the Ammeter is: "+curr+"A");
+                }
             }
         });
         
@@ -295,6 +310,7 @@ public class HelloDragAndDrop extends Application {
                         canvasGrid.add(stpane,i,j);
                     }
                 }
+                paneLabel.setText("");
             }
         });
         

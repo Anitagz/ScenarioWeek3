@@ -19,6 +19,7 @@ public class Circuit implements Serializable{
     double totalRes = 0;
     double totalVolt = 0;
     boolean isAmm = false;
+    boolean isInvalid = false;
     
     public void setComponent(Component c,int i, int j){
         grid[i][j] = c;
@@ -31,27 +32,28 @@ public class Circuit implements Serializable{
     
     public void run(){
         //System.out.println("It works!");
+        boolean test = false;
+        while(test==false){
          for(int j = 0; j < 9; j++){
             for(int i=0; i < 13; i++){
                 if(grid[i][j] instanceof Battery){
                     start[0][0] = i;
                     start[1][0] = j;
-<<<<<<< HEAD
-                    Battery eg = (Battery) grid[i][j];
-                    totalVolt+=eg.getVoltage();
-=======
+
                     Battery b = (Battery) grid[i][j];
                     totalVolt += b.getVoltage();
->>>>>>> origin/master
+                    test=true;
+                    
                     startCheck(i+1, j, "left");
                 }
             }
+         }
         }
     }
     
-    public void printCurrent(){
+    public double getTotalCurrent(){
         double current = totalVolt/totalRes;
-        System.out.println();
+        return current;
     }
     
     public void startCheck(int i, int j, String side){
@@ -60,9 +62,11 @@ public class Circuit implements Serializable{
             System.out.println("It works! :D");
             System.out.println("totalres: "+totalRes);
             System.out.println("totalvolt: "+totalVolt);
+            /*
             if(isAmm = true){
                 printCurrent();
             }
+            */
         }
         
         else if(side.compareTo("left")==0){
@@ -82,6 +86,7 @@ public class Circuit implements Serializable{
                 else
                 {
                     System.out.println("Not a valid circuit!" + i + j + " " + getLineNumber());
+                    isInvalid = true;
                 }
             }
             else{
@@ -90,26 +95,27 @@ public class Circuit implements Serializable{
                 isAmm = true;
                 startCheck(i+1, j, "left");
             }
-            if(grid[i][j] instanceof Lamp){
+            else if(grid[i][j] instanceof Lamp){
                 Lamp eg = (Lamp) grid[i][j];
                 totalRes+=eg.getResistance();
                 startCheck(i+1, j, "left");
             }
-            if(grid[i][j] instanceof Battery){
+            else if(grid[i][j] instanceof Battery){
                 Battery eg = (Battery) grid[i][j];
                 totalVolt+=eg.getVoltage();
                 startCheck(i+1, j, "left");
             }
-            if(grid[i][j] instanceof Switch){
+            else if(grid[i][j] instanceof Switch){
                 startCheck(i+1, j, "left");
             }
-            if(grid[i][j] instanceof Resistor){
+            else if(grid[i][j] instanceof Resistor){
                 Resistor eg = (Resistor) grid[i][j];
                 totalRes+=eg.getResistance();
                 startCheck(i+1, j, "left");
             }
             else{
                 System.out.println("Not a valid circuit!" + i + j + " " + getLineNumber());
+                isInvalid = true;
             }
             }
         }
@@ -131,6 +137,7 @@ public class Circuit implements Serializable{
                 else
                 {
                     System.out.println("Not a valid circuit!" + i + j + " " + getLineNumber());
+                    isInvalid = true;
                 }
             }
             //Components
@@ -159,6 +166,7 @@ public class Circuit implements Serializable{
             }
             else{
                 System.out.println("Not a valid circuit!"+i+j + " " + getLineNumber());
+                isInvalid = true;
             }
             }
         }
@@ -179,10 +187,12 @@ public class Circuit implements Serializable{
                 else
                 {
                     System.out.println("Not a valid circuit!"+i+j + " " + getLineNumber());
+                    isInvalid = true;
                 }
             }
             else{
                 System.out.println("Not a valid circuit!"+i+j + " " + getLineNumber());
+                isInvalid = true;
             }
         }
         
@@ -202,10 +212,12 @@ public class Circuit implements Serializable{
                 else
                 {
                     System.out.println("Not a valid circuit!"+i+j + " " + getLineNumber());
+                    isInvalid = true;
                 }
             }
             else{
                 System.out.println("Not a valid circuit!"+i+j + " " + getLineNumber());
+                isInvalid = true;
             }
         }
 
