@@ -82,7 +82,7 @@ public class Circuit implements Serializable{
             }
             if(grid[i][j] instanceof Battery){
                 Battery eg = (Battery) grid[i][j];
-                totalRes+=eg.getVoltage();
+                totalVolt+=eg.getVoltage();
                 startCheck(i+1, j, "left");
             }
             if(grid[i][j] instanceof Switch){
@@ -131,7 +131,7 @@ public class Circuit implements Serializable{
             }
             else if(grid[i][j] instanceof Battery){
                 Battery eg = (Battery) grid[i][j];
-                totalRes+=eg.getVoltage();
+                totalVolt+=eg.getVoltage();
                 startCheck(i-1, j, "right");
             }
             else if(grid[i][j] instanceof Switch){
