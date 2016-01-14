@@ -247,9 +247,39 @@ public class HelloDragAndDrop extends Application {
                     if (circuit.getComponent(i,j) instanceof Battery){
                         Battery b = (Battery) circuit.getComponent(i,j);
                         double vol = b.getVoltage();
-                    Label lab = new Label("The Voltage is "+vol);
-                    System.out.println(vol);
-                    rside.getChildren().addAll(lab);
+                        Label lab = new Label("The Voltage is "+vol);
+                        System.out.println(vol);
+                        rside.getChildren().addAll(lab);
+                    }
+                    else if (circuit.getComponent(i,j) instanceof Lamp){
+                        Lamp b = (Lamp) circuit.getComponent(i,j);
+                        double res = b.getResistance();
+                        double status = b.getStatus();
+                        Label lab1 = new Label("the status is"+status);
+                        Label lab = new Label("The resistance is"+res);
+                        rside.getChildren().addAll(lab);
+                        rside.getChildren().addAll(lab1);
+                    }
+                    else if (circuit.getComponent(i,j) instanceof Voltmeter){
+                        Voltmeter b = (Voltmeter) circuit.getComponent(i,j);
+                        double vol = b.getVoltage();
+                        Label lab = new Label("The Voltage is "+vol);
+                        System.out.println(vol);
+                        rside.getChildren().addAll(lab);
+                    }
+                    else if (circuit.getComponent(i,j) instanceof Ammeter){
+                        Ammeter b = (Ammeter) circuit.getComponent(i,j);
+                        double cur = b.getCurrent();
+                        Label lab = new Label("The cuurent is "+cur);
+                        System.out.println(cur);
+                        rside.getChildren().addAll(lab);
+                    }
+                    else if (circuit.getComponent(i,j) instanceof Resistor){
+                        Resistor b = (Resistor) circuit.getComponent(i,j);
+                        double res = b.getResistance();
+                        Label lab = new Label("The Resistance is "+res);
+                        System.out.println(res);
+                        rside.getChildren().addAll(lab);
                     }
                 }
             }
