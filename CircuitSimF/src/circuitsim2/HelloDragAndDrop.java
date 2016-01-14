@@ -179,7 +179,7 @@ public class HelloDragAndDrop extends Application {
             for(int i=0; i < 13; i++){
                 //canvasGrid.add(gridBG,i,0);
 
-                Pane stpane = new StackPane();
+                Pane stpane = new Pane();
                 stpane.setMinSize(gridSize, gridSize);
                 stpane.setMaxSize(gridSize, gridSize);
                 stpane.setPrefSize(gridSize, gridSize);
@@ -226,12 +226,13 @@ public class HelloDragAndDrop extends Application {
         });
     }
     
-    void setupMouseClickSource(ImageView source){
+    void setupMouseClickSource(ImageView source, int i, int j){
         source.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
-                if (event.getButton() == MouseButton.SECONDARY) {
-                    System.out.println("Right button clicked");
+                if (event.getButton() == MouseButton.PRIMARY) {
+                    System.out.println("Left button clicked");
+                    System.out.println("i = "+ i + " j = " + j);
                 }
             }
         });
@@ -309,9 +310,10 @@ public class HelloDragAndDrop extends Application {
                     Image img1 = new Image(getClass().getResourceAsStream("Images/battery.png"));
                         iv1.setImage(img1);
                         setupGestureSource(iv1, component);
-                        setupMouseClickSource(iv1);
+                        setupMouseClickSource(iv1,i,j);
                         System.out.println(i);
                         System.out.println(j);
+                        
                 }
                 else if(component.compareTo("ammeter")==0){
                     Image img1 = new Image(getClass().getResourceAsStream("Images/example.png"));

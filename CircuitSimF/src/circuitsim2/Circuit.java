@@ -10,7 +10,7 @@ package circuitsim2;
  * @author Anita
  */
 public class Circuit {
-Component[][] grid = new Component[9][13];
+//Component[][] grid = new Component[9][13];
     
     
 }
