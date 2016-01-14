@@ -211,8 +211,18 @@ public class HelloDragAndDrop extends Application {
         bside.setStyle("-fx-padding: 10; -fx-background-color: aliceblue;");
         grid.add(bside, 1,2); 
         
+        Button runButton = new Button("Run");
+        bside.getChildren().addAll(runButton);
+        
+        runButton.setOnAction(new EventHandler<ActionEvent>() {
+                            @Override public void handle(ActionEvent e) {
+                                circuit.run();
+                            }
+                        });
+        
         stage.setScene(scene);
         stage.show();
+        
     }
 
     void setupGestureSource(ImageView source, String component){
