@@ -27,7 +27,7 @@ public class Circuit implements Serializable{
     }
     
     public void run(){
-        System.out.println("It works!");
+        //System.out.println("It works!");
          for(int j = 0; j < 9; j++){
             for(int i=0; i < 13; i++){
                 if(grid[i][j] instanceof Battery){
@@ -45,24 +45,26 @@ public class Circuit implements Serializable{
             System.out.println("It works! :D");
         }
         
-        if(side.compareTo("left")==0){
+        else if(side.compareTo("left")==0){
             //Wires
             if(grid[i][j] instanceof Wire){
                 Wire b = (Wire) grid[i][j];
-                if(b.getType().compareTo("WireHorizontal")==0){
+                System.out.println("from left " + b.getType());
+                if(b.getType().compareTo("wireHorizontal")==0){
                     startCheck(i+1, j, "left");
                 }
-                else if(b.getType().compareTo("WireJ")==0){
-                    startCheck(i, j+1, "down");
+                else if(b.getType().compareTo("wireJ")==0){
+                    startCheck(i, j-1, "down");
                 }
-                else if(b.getType().compareTo("WireLeftDown")==0){
-                    startCheck(i, j-1, "top");
+                else if(b.getType().compareTo("wireLeftDown")==0){
+                    startCheck(i, j+1, "top");
                 }
                 else
                 {
-                    System.out.println("Not a valid circuit!");
+                    System.out.println("Not a valid circuit!" + i + j + " " + getLineNumber());
                 }
             }
+            else{
             //Components
             if(grid[i][j] instanceof Ammeter){
                 startCheck(i+1, j, "left");
@@ -77,91 +79,99 @@ public class Circuit implements Serializable{
                 startCheck(i+1, j, "left");
             }
             else{
-                System.out.println("Not a valid circuit!");
+                System.out.println("Not a valid circuit!" + i + j + " " + getLineNumber());
+            }
             }
         }
         
-        if(side.compareTo("right")==0){
+        else if(side.compareTo("right")==0){
             //Wires
             if(grid[i][j] instanceof Wire){
                 Wire b = (Wire) grid[i][j];
-                if(b.getType().compareTo("WireHorizontal")==0){
+                System.out.println("from right " + b.getType());
+                if(b.getType().compareTo("wireHorizontal")==0){
                     startCheck(i-1, j, "right");
                 }
-                else if(b.getType().compareTo("WireF")==0){
-                    startCheck(i, j-1, "top");
+                else if(b.getType().compareTo("wireF")==0){
+                    startCheck(i, j+1, "top");
                 }
-                else if(b.getType().compareTo("WireL")==0){
-                    startCheck(i, j+1, "bottom");
+                else if(b.getType().compareTo("wireL")==0){
+                    startCheck(i, j-1, "bottom");
                 }
                 else
                 {
-                    System.out.println("Not a valid circuit!");
+                    System.out.println("Not a valid circuit!" + i + j + " " + getLineNumber());
                 }
             }
             //Components
+            else{
             if(grid[i][j] instanceof Ammeter){
-                startCheck(i+1, j, "right");
+                startCheck(i-1, j, "right");
             }
-            if(grid[i][j] instanceof Lamp){
-                startCheck(i+1, j, "right");
+            else if(grid[i][j] instanceof Lamp){
+                startCheck(i-1, j, "right");
             }
-            if(grid[i][j] instanceof Battery){
-                startCheck(i+1, j, "right");
+            else if(grid[i][j] instanceof Battery){
+                startCheck(i-1, j, "right");
             }
-            if(grid[i][j] instanceof Switch){
-                startCheck(i+1, j, "right");
+            else if(grid[i][j] instanceof Switch){
+                startCheck(i-1, j, "right");
             }
             else{
-                System.out.println("Not a valid circuit!");
+                System.out.println("Not a valid circuit!"+i+j + " " + getLineNumber());
+            }
             }
         }
         
-        if(side.compareTo("top")==0){
+        else if(side.compareTo("top")==0){
             //Wires
             if(grid[i][j] instanceof Wire){
                 Wire b = (Wire) grid[i][j];
-                if(b.getType().compareTo("WireVertical")==0){
-                    startCheck(i, j-1, "top");
+                if(b.getType().compareTo("wireVertical")==0){
+                    startCheck(i, j+1, "top");
                 }
-                else if(b.getType().compareTo("WireJ")==0){
+                else if(b.getType().compareTo("wireJ")==0){
                     startCheck(i-1, j, "right");
                 }
-                else if(b.getType().compareTo("WireL")==0){
+                else if(b.getType().compareTo("wireL")==0){
                     startCheck(i+1, j, "left");
                 }
                 else
                 {
-                    System.out.println("Not a valid circuit!");
+                    System.out.println("Not a valid circuit!"+i+j + " " + getLineNumber());
                 }
             }
             else{
-                System.out.println("Not a valid circuit!");
+                System.out.println("Not a valid circuit!"+i+j + " " + getLineNumber());
             }
         }
         
-        if(side.compareTo("bottom")==0){
+        else if(side.compareTo("bottom")==0){
             //Wires
             if(grid[i][j] instanceof Wire){
                 Wire b = (Wire) grid[i][j];
-                if(b.getType().compareTo("WireVertical")==0){
-                    startCheck(i, j+1, "bottom");
+                if(b.getType().compareTo("wireVertical")==0){
+                    startCheck(i, j-1, "bottom");
                 }
-                else if(b.getType().compareTo("WireF")==0){
+                else if(b.getType().compareTo("wireF")==0){
                     startCheck(i+1, j, "left");
                 }
-                else if(b.getType().compareTo("WireLeftDown")==0){
+                else if(b.getType().compareTo("wireLeftDown")==0){
                     startCheck(i-1, j, "right");
                 }
                 else
                 {
-                    System.out.println("Not a valid circuit!");
+                    System.out.println("Not a valid circuit!"+i+j + " " + getLineNumber());
                 }
             }
             else{
-                System.out.println("Not a valid circuit!");
+                System.out.println("Not a valid circuit!"+i+j + " " + getLineNumber());
             }
         }
 
+    }
+    
+    public static int getLineNumber() {
+        return Thread.currentThread().getStackTrace()[2].getLineNumber();
     }
 }
