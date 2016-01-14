@@ -219,7 +219,8 @@ public class HelloDragAndDrop extends Application {
         Button runButton = new Button("Run");
         Button saveButton = new Button("Save");
         Button openButton = new Button("Open");
-        bside.getChildren().addAll(runButton,saveButton,openButton);
+        Button clearButton = new Button("Clear");
+        bside.getChildren().addAll(runButton,saveButton,openButton,clearButton);
         
         runButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
@@ -261,6 +262,31 @@ public class HelloDragAndDrop extends Application {
 			ex.printStackTrace();
 		}
                 
+            }
+        });
+        
+        clearButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+                
+                GridPane canvasGrid = new GridPane();
+                grid.add(canvasGrid,1,1);
+                canvasGrid.setGridLinesVisible(true);
+                int gridSize = 50;
+                for(int j = 0; j < 9; j++){
+
+
+                    for(int i=0; i < 13; i++){
+                        //canvasGrid.add(gridBG,i,0);
+
+                        Pane stpane = new Pane();
+                        stpane.setMinSize(gridSize, gridSize);
+                        stpane.setMaxSize(gridSize, gridSize);
+                        stpane.setPrefSize(gridSize, gridSize);
+                        //stpane.setStyle("-fx-background-color:white");
+                        setupGestureTarget(stpane, i, j);
+                        canvasGrid.add(stpane,i,j);
+                    }
+                }
             }
         });
         
