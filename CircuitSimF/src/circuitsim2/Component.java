@@ -9,11 +9,14 @@ package circuitsim2;
  *
  * @author Anita
  */
+
+/*
 public class Component {
     private String name;
     
     public Component(String n){
         this.name = n;
     }    
-    
+*/    
+
 }

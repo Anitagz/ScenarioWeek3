@@ -48,82 +48,82 @@ public class HelloDragAndDrop extends Application {
         
         int symbolSize = 50;
         
-        Image img1 = new Image(getClass().getResourceAsStream("images/ammeter.png"));
+        Image img1 = new Image(getClass().getResourceAsStream("Images/ammeter.png"));
         ImageView ammeterSym = new ImageView(img1);
         ammeterSym.setFitHeight(symbolSize);
         ammeterSym.setFitWidth(symbolSize);
         
-        Image img2 = new Image(getClass().getResourceAsStream("images/voltmeter.png"));
+        Image img2 = new Image(getClass().getResourceAsStream("Images/voltmeter.png"));
         ImageView voltmeterSym = new ImageView(img2);
         voltmeterSym.setFitHeight(symbolSize);
         voltmeterSym.setFitWidth(symbolSize);
         
-        Image img3 = new Image(getClass().getResourceAsStream("images/battery.png"));
+        Image img3 = new Image(getClass().getResourceAsStream("Images/battery.png"));
         ImageView batterySym = new ImageView(img3);
         batterySym.setFitHeight(symbolSize);
         batterySym.setFitWidth(symbolSize);
         
-        Image img4 = new Image(getClass().getResourceAsStream("images/lamp.png"));
+        Image img4 = new Image(getClass().getResourceAsStream("Images/lamp.png"));
         ImageView lampSym = new ImageView(img4);
         lampSym.setFitHeight(symbolSize);
         lampSym.setFitWidth(symbolSize);
         
-        Image img5 = new Image(getClass().getResourceAsStream("images/resistor.png"));
+        Image img5 = new Image(getClass().getResourceAsStream("Images/resistor.png"));
         ImageView resistorSym = new ImageView(img5);
         resistorSym.setFitHeight(symbolSize);
         resistorSym.setFitWidth(symbolSize);
         
-        Image img6 = new Image(getClass().getResourceAsStream("images/openswitch.png"));
+        Image img6 = new Image(getClass().getResourceAsStream("Images/openswitch.png"));
         ImageView openswitchSym = new ImageView(img6);
         openswitchSym.setFitHeight(symbolSize);
         openswitchSym.setFitWidth(symbolSize);
         
-        Image img7 = new Image(getClass().getResourceAsStream("images/wireF.png"));
+        Image img7 = new Image(getClass().getResourceAsStream("Images/wireF.png"));
         ImageView wireFSym = new ImageView(img7);
         wireFSym.setFitHeight(symbolSize);
         wireFSym.setFitWidth(symbolSize);
         
-        Image img8 = new Image(getClass().getResourceAsStream("images/wireHorizontal.png"));
+        Image img8 = new Image(getClass().getResourceAsStream("Images/wireHorizontal.png"));
         ImageView wireHorizontalSym = new ImageView(img8);
         wireHorizontalSym.setFitHeight(symbolSize);
         wireHorizontalSym.setFitWidth(symbolSize);
         
-        Image img9 = new Image(getClass().getResourceAsStream("images/wireJ.png"));
+        Image img9 = new Image(getClass().getResourceAsStream("Images/wireJ.png"));
         ImageView wireJSym = new ImageView(img9);
         wireJSym.setFitHeight(symbolSize);
         wireJSym.setFitWidth(symbolSize);
         
-        Image img10 = new Image(getClass().getResourceAsStream("images/wireL.png"));
+        Image img10 = new Image(getClass().getResourceAsStream("Images/wireL.png"));
         ImageView wireLSym = new ImageView(img10);
         wireLSym.setFitHeight(symbolSize);
         wireLSym.setFitWidth(symbolSize);
         
-        Image img11 = new Image(getClass().getResourceAsStream("images/wireLeftDown.png"));
+        Image img11 = new Image(getClass().getResourceAsStream("Images/wireLeftDown.png"));
         ImageView wireLeftDownSym = new ImageView(img11);
         wireLeftDownSym.setFitHeight(symbolSize);
         wireLeftDownSym.setFitWidth(symbolSize);
         
-        Image img13 = new Image(getClass().getResourceAsStream("images/wireTdown.png"));
+        Image img13 = new Image(getClass().getResourceAsStream("Images/wireTdown.png"));
         ImageView wireTdownSym = new ImageView(img13);
         wireTdownSym.setFitHeight(symbolSize);
         wireTdownSym.setFitWidth(symbolSize);
         
-        Image img14 = new Image(getClass().getResourceAsStream("images/wireTright.png"));
+        Image img14 = new Image(getClass().getResourceAsStream("Images/wireTright.png"));
         ImageView wireTrightSym = new ImageView(img14);
         wireTrightSym.setFitHeight(symbolSize);
         wireTrightSym.setFitWidth(symbolSize);
         
-        Image img15 = new Image(getClass().getResourceAsStream("images/wireTup.png"));
+        Image img15 = new Image(getClass().getResourceAsStream("Images/wireTup.png"));
         ImageView wireTupSym = new ImageView(img15);
         wireTupSym.setFitHeight(symbolSize);
         wireTupSym.setFitWidth(symbolSize);
         
-        Image img16 = new Image(getClass().getResourceAsStream("images/wireVertical.png"));
+        Image img16 = new Image(getClass().getResourceAsStream("Images/wireVertical.png"));
         ImageView wireVerticalSym = new ImageView(img16);
         wireVerticalSym.setFitHeight(symbolSize);
         wireVerticalSym.setFitWidth(symbolSize);
         
-        Image img17 = new Image(getClass().getResourceAsStream("images/wireTleft.png"));
+        Image img17 = new Image(getClass().getResourceAsStream("Images/wireTleft.png"));
         ImageView wireTleftSym = new ImageView(img17);
         wireTleftSym.setFitHeight(symbolSize);
         wireTleftSym.setFitWidth(symbolSize);
@@ -306,7 +306,7 @@ public class HelloDragAndDrop extends Application {
                
                         
                 if(component.compareTo("battery")==0){
-                    Image img1 = new Image(getClass().getResourceAsStream("images/battery.png"));
+                    Image img1 = new Image(getClass().getResourceAsStream("Images/battery.png"));
                         iv1.setImage(img1);
                         setupGestureSource(iv1, component);
                         setupMouseClickSource(iv1);
@@ -314,63 +314,63 @@ public class HelloDragAndDrop extends Application {
                         System.out.println(j);
                 }
                 else if(component.compareTo("ammeter")==0){
-                    Image img1 = new Image(getClass().getResourceAsStream("images/example.png"));
+                    Image img1 = new Image(getClass().getResourceAsStream("Images/example.png"));
                         iv1.setImage(img1);
                 }
                 else if(component.compareTo("voltmeter")==0){
-                    Image img1 = new Image(getClass().getResourceAsStream("images/voltmeter.png"));
+                    Image img1 = new Image(getClass().getResourceAsStream("Images/voltmeter.png"));
                         iv1.setImage(img1);
                 }
                 else if(component.compareTo("resistor")==0){
-                    Image img1 = new Image(getClass().getResourceAsStream("images/resistor.png"));
+                    Image img1 = new Image(getClass().getResourceAsStream("Images/resistor.png"));
                         iv1.setImage(img1);
                 }
                 else if(component.compareTo("lamp")==0){
-                    Image img1 = new Image(getClass().getResourceAsStream("images/lamp.png"));
+                    Image img1 = new Image(getClass().getResourceAsStream("Images/lamp.png"));
                         iv1.setImage(img1);
                 }
                 else if(component.compareTo("openswitch")==0){
-                    Image img1 = new Image(getClass().getResourceAsStream("images/openswitch.png"));
+                    Image img1 = new Image(getClass().getResourceAsStream("Images/openswitch.png"));
                         iv1.setImage(img1);
                 }
                 else if(component.compareTo("closedswitch")==0){
-                    Image img1 = new Image(getClass().getResourceAsStream("images/closedswitch.png"));
+                    Image img1 = new Image(getClass().getResourceAsStream("Images/closedswitch.png"));
                         iv1.setImage(img1);
                 }
                 else if(component.compareTo("wireF")==0){
-                    Image img1 = new Image(getClass().getResourceAsStream("images/wireF.png"));
+                    Image img1 = new Image(getClass().getResourceAsStream("Images/wireF.png"));
                         iv1.setImage(img1);
                 }
                 else if(component.compareTo("wireHorizontal")==0){
-                    Image img1 = new Image(getClass().getResourceAsStream("images/wireHorizontal.png"));
+                    Image img1 = new Image(getClass().getResourceAsStream("Images/wireHorizontal.png"));
                         iv1.setImage(img1);
                 }
                 else if(component.compareTo("wireJ")==0){
-                    Image img1 = new Image(getClass().getResourceAsStream("images/wireJ.png"));
+                    Image img1 = new Image(getClass().getResourceAsStream("Images/wireJ.png"));
                         iv1.setImage(img1);
                 }
                 else if(component.compareTo("wireL")==0){
-                    Image img1 = new Image(getClass().getResourceAsStream("images/wireL.png"));
+                    Image img1 = new Image(getClass().getResourceAsStream("Images/wireL.png"));
                         iv1.setImage(img1);
                 }
                 else if(component.compareTo("wireLeftDown")==0){
-                    Image img1 = new Image(getClass().getResourceAsStream("images/wireLeftDown.png"));
+                    Image img1 = new Image(getClass().getResourceAsStream("Images/wireLeftDown.png"));
                         iv1.setImage(img1);
                 }
                 else if(component.compareTo("wireTdown")==0){
-                    Image img1 = new Image(getClass().getResourceAsStream("images/wireTdown.png"));
+                    Image img1 = new Image(getClass().getResourceAsStream("Images/wireTdown.png"));
                         iv1.setImage(img1);
                 }
                 else if(component.compareTo("wireTleft")==0){
-                    Image img1 = new Image(getClass().getResourceAsStream("images/wireTleft.png"));
+                    Image img1 = new Image(getClass().getResourceAsStream("Images/wireTleft.png"));
                         iv1.setImage(img1);
                 }
                 else if(component.compareTo("wireTup")==0){
-                    Image img1 = new Image(getClass().getResourceAsStream("images/wireTup.png"));
+                    Image img1 = new Image(getClass().getResourceAsStream("Images/wireTup.png"));
                         iv1.setImage(img1);
                 }
                 else if(component.compareTo("wireVertical")==0){
-                    Image img1 = new Image(getClass().getResourceAsStream("images/wireVertical.png"));
+                    Image img1 = new Image(getClass().getResourceAsStream("Images/wireVertical.png"));
                         iv1.setImage(img1);
                 }
                 
