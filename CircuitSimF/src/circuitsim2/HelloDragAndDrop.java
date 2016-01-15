@@ -248,61 +248,150 @@ public class HelloDragAndDrop extends Application {
                     canvasGrid.setGridLinesVisible(true);
                     grid.add(canvasGrid,1,1);
                     int gridSize = 50;
-                    ImageView iv1 = new ImageView();
-                    iv1.setFitHeight(gridSize);
-                    iv1.setFitWidth(gridSize);
                     for(int i=0; i<13; i++){
                         for(int j=0; j<9; j++){
                            System.out.println("i,j: " + i + "," + j + circuit.getComponent(i,j));
                            if(circuit.getComponent(i, j) instanceof Battery){
                                 Image img1 = new Image(getClass().getResourceAsStream("Images/battery.png"));
+                                ImageView iv1 = new ImageView();
+                                iv1.setFitHeight(gridSize);
+                                iv1.setFitWidth(gridSize);
                                 iv1.setImage(img1);
                                 setupGestureSource(iv1, "battery");
                                 System.out.println("bat");
+                                Pane stpane = new Pane();
+                            stpane.setMinSize(gridSize, gridSize);
+                            stpane.setMaxSize(gridSize, gridSize);
+                            stpane.setPrefSize(gridSize, gridSize);
+                            //stpane.setStyle("-fx-background-color:white");
+                            setupGestureTarget(stpane, i, j);
+                            setupMouseClickSource(iv1,i,j);
+                            System.out.println(iv1.getImage());
+                            stpane.getChildren().add(iv1);
+                            canvasGrid.add(stpane,i,j); 
                            }
                            else if(circuit.getComponent(i, j) instanceof Ammeter){
                                 Image img1 = new Image(getClass().getResourceAsStream("Images/ammeter.png"));
+                                ImageView iv1 = new ImageView();
+                                iv1.setFitHeight(gridSize);
+                                iv1.setFitWidth(gridSize);
                                 iv1.setImage(img1);
                                 setupGestureSource(iv1, "ammeter");
                                 System.out.println("amm");
+                                Pane stpane = new Pane();
+                            stpane.setMinSize(gridSize, gridSize);
+                            stpane.setMaxSize(gridSize, gridSize);
+                            stpane.setPrefSize(gridSize, gridSize);
+                            //stpane.setStyle("-fx-background-color:white");
+                            setupGestureTarget(stpane, i, j);
+                            setupMouseClickSource(iv1,i,j);
+                            System.out.println(iv1.getImage());
+                            stpane.getChildren().add(iv1);
+                            canvasGrid.add(stpane,i,j); 
                                
                            }
                            else if(circuit.getComponent(i, j) instanceof Voltmeter){
                                 Image img1 = new Image(getClass().getResourceAsStream("Images/voltmeter.png"));
+                                ImageView iv1 = new ImageView();
+                                iv1.setFitHeight(gridSize);
+                                iv1.setFitWidth(gridSize);
                                 iv1.setImage(img1);
                                 setupGestureSource(iv1, "voltmeter");
                                 System.out.println("volt");
+                                Pane stpane = new Pane();
+                            stpane.setMinSize(gridSize, gridSize);
+                            stpane.setMaxSize(gridSize, gridSize);
+                            stpane.setPrefSize(gridSize, gridSize);
+                            //stpane.setStyle("-fx-background-color:white");
+                            setupGestureTarget(stpane, i, j);
+                            setupMouseClickSource(iv1,i,j);
+                            System.out.println(iv1.getImage());
+                            stpane.getChildren().add(iv1);
+                            canvasGrid.add(stpane,i,j); 
                                
                            }
                            else if(circuit.getComponent(i, j) instanceof Resistor){
                                 Image img1 = new Image(getClass().getResourceAsStream("Images/resistor.png"));
+                                ImageView iv1 = new ImageView();
+                                iv1.setFitHeight(gridSize);
+                                iv1.setFitWidth(gridSize);
                                 iv1.setImage(img1);
                                 setupGestureSource(iv1, "resistor");
                                 System.out.println("res");
+                                Pane stpane = new Pane();
+                            stpane.setMinSize(gridSize, gridSize);
+                            stpane.setMaxSize(gridSize, gridSize);
+                            stpane.setPrefSize(gridSize, gridSize);
+                            //stpane.setStyle("-fx-background-color:white");
+                            setupGestureTarget(stpane, i, j);
+                            setupMouseClickSource(iv1,i,j);
+                            System.out.println(iv1.getImage());
+                            stpane.getChildren().add(iv1);
+                            canvasGrid.add(stpane,i,j); 
                                
                            }
                            else if(circuit.getComponent(i, j) instanceof Lamp){
                                 Image img1 = new Image(getClass().getResourceAsStream("Images/lamp.png"));
+                                ImageView iv1 = new ImageView();
+                                iv1.setFitHeight(gridSize);
+                                iv1.setFitWidth(gridSize);
                                 iv1.setImage(img1);
                                 setupGestureSource(iv1, "lamp");
                                 System.out.println("lamp");
+                                Pane stpane = new Pane();
+                            stpane.setMinSize(gridSize, gridSize);
+                            stpane.setMaxSize(gridSize, gridSize);
+                            stpane.setPrefSize(gridSize, gridSize);
+                            //stpane.setStyle("-fx-background-color:white");
+                            setupGestureTarget(stpane, i, j);
+                            setupMouseClickSource(iv1,i,j);
+                            System.out.println(iv1.getImage());
+                            stpane.getChildren().add(iv1);
+                            canvasGrid.add(stpane,i,j); 
                                
                            }
                            else if(circuit.getComponent(i, j) instanceof Switch){
                                 Image img1 = new Image(getClass().getResourceAsStream("Images/openswitch.png"));
+                                ImageView iv1 = new ImageView();
+                                iv1.setFitHeight(gridSize);
+                                iv1.setFitWidth(gridSize);
                                 iv1.setImage(img1);
                                 System.out.println("s");
                                 setupGestureSource(iv1, "openswitch");
+                                Pane stpane = new Pane();
+                            stpane.setMinSize(gridSize, gridSize);
+                            stpane.setMaxSize(gridSize, gridSize);
+                            stpane.setPrefSize(gridSize, gridSize);
+                            //stpane.setStyle("-fx-background-color:white");
+                            setupGestureTarget(stpane, i, j);
+                            setupMouseClickSource(iv1,i,j);
+                            System.out.println(iv1.getImage());
+                            stpane.getChildren().add(iv1);
+                            canvasGrid.add(stpane,i,j); 
                                
                            }
                            else if(circuit.getComponent(i, j) instanceof Wire){
                                Wire w = (Wire) circuit.getComponent(i,j);
                                if(checkWireType(w.getType())){
                                 Image img1 = new Image(getClass().getResourceAsStream("Images/"+w.getType()+".png"));
+                                ImageView iv1 = new ImageView();
+                                iv1.setFitHeight(gridSize);
+                                iv1.setFitWidth(gridSize);
                                 iv1.setImage(img1);
                                 setupGestureSource(iv1, w.getType());
+                                Pane stpane = new Pane();
+                            stpane.setMinSize(gridSize, gridSize);
+                            stpane.setMaxSize(gridSize, gridSize);
+                            stpane.setPrefSize(gridSize, gridSize);
+                            //stpane.setStyle("-fx-background-color:white");
+                            setupGestureTarget(stpane, i, j);
+                            setupMouseClickSource(iv1,i,j);
+                            System.out.println(iv1.getImage());
+                            stpane.getChildren().add(iv1);
+                            canvasGrid.add(stpane,i,j); 
                                }
                                System.out.println("w");
+                               
                            }
                            else{
                                 Pane stpane = new Pane();
@@ -314,16 +403,7 @@ public class HelloDragAndDrop extends Application {
                                 continue;
                            }
 
-                            Pane stpane = new Pane();
-                            stpane.setMinSize(gridSize, gridSize);
-                            stpane.setMaxSize(gridSize, gridSize);
-                            stpane.setPrefSize(gridSize, gridSize);
-                            //stpane.setStyle("-fx-background-color:white");
-                            setupGestureTarget(stpane, i, j);
-                            setupMouseClickSource(iv1,i,j);
-                            System.out.println(iv1.getImage());
-                            stpane.getChildren().add(iv1);
-                            canvasGrid.add(stpane,i,j); 
+                            
                            
                         }
                     }
