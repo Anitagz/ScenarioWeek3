@@ -310,9 +310,9 @@ public class HelloDragAndDrop extends Application {
                                
                            }
                            else if(circuit.getComponent(i, j) instanceof Switch){
-                                Image img1 = new Image(getClass().getResourceAsStream("Images/switch.png"));
+                                Image img1 = new Image(getClass().getResourceAsStream("Images/openswitch.png"));
                                 iv1.setImage(img1);
-                                setupGestureSource(iv1, "switch");
+                                setupGestureSource(iv1, "openswitch");
                                
                            }
                            else if(circuit.getComponent(i, j) instanceof Wire){
