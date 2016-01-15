@@ -39,12 +39,11 @@ public class HelloDragAndDrop extends Application {
     VBox rside = new VBox(2);
     GridPane bside = new GridPane();
     Label paneLabel = new Label("");
+    GridPane canvasGrid = new GridPane();
     
     @Override public void start(Stage stage) {
         stage.setTitle("Hello Drag And Drop");
 
-        Group root = new Group();
-        
         GridPane grid = new GridPane();
         Scene scene = new Scene(grid, 960, 590);
         
@@ -184,13 +183,10 @@ public class HelloDragAndDrop extends Application {
         grid.add(componentsGrid,0,1);
         
         
-        GridPane canvasGrid = new GridPane();
         grid.add(canvasGrid,1,1);
         canvasGrid.setGridLinesVisible(true);
         int gridSize = 50;
         for(int j = 0; j < 9; j++){
-            
-        
             for(int i=0; i < 13; i++){
                 //canvasGrid.add(gridBG,i,0);
 
@@ -272,9 +268,86 @@ public class HelloDragAndDrop extends Application {
                     ObjectInputStream ois = new ObjectInputStream(fis);
                     Circuit result = (Circuit) ois.readObject();
                     ois.close();
-                    if(result.getComponent(0, 0) instanceof Battery){
-                        System.out.println("it works");
+                    circuit = result;
+                    grid.getChildren().remove(canvasGrid);
+                    canvasGrid = new GridPane();
+                    canvasGrid.setGridLinesVisible(true);
+                    grid.add(canvasGrid,1,1);
+                    int gridSize = 50;
+                    ImageView iv1 = new ImageView();
+                    iv1.setFitHeight(gridSize);
+                    iv1.setFitWidth(gridSize);
+                    for(int i=0; i<13; i++){
+                        for(int j=0; j<9; j++){
+                           System.out.println("i,j: " + i + "," + j + circuit.getComponent(i,j));
+                           if(circuit.getComponent(i, j) instanceof Battery){
+                                Image img1 = new Image(getClass().getResourceAsStream("Images/battery.png"));
+                                iv1.setImage(img1);
+                                setupGestureSource(iv1, "battery");
+                           }
+                           else if(circuit.getComponent(i, j) instanceof Ammeter){
+                                Image img1 = new Image(getClass().getResourceAsStream("Images/ammeter.png"));
+                                iv1.setImage(img1);
+                                setupGestureSource(iv1, "ammeter");
+                               
+                           }
+                           else if(circuit.getComponent(i, j) instanceof Voltmeter){
+                                Image img1 = new Image(getClass().getResourceAsStream("Images/voltmeter.png"));
+                                iv1.setImage(img1);
+                                setupGestureSource(iv1, "voltmeter");
+                               
+                           }
+                           else if(circuit.getComponent(i, j) instanceof Resistor){
+                                Image img1 = new Image(getClass().getResourceAsStream("Images/resistor.png"));
+                                iv1.setImage(img1);
+                                setupGestureSource(iv1, "resistor");
+                               
+                           }
+                           else if(circuit.getComponent(i, j) instanceof Lamp){
+                                Image img1 = new Image(getClass().getResourceAsStream("Images/lamp.png"));
+                                iv1.setImage(img1);
+                                setupGestureSource(iv1, "lamp");
+                               
+                           }
+                           else if(circuit.getComponent(i, j) instanceof Switch){
+                                Image img1 = new Image(getClass().getResourceAsStream("Images/switch.png"));
+                                iv1.setImage(img1);
+                                setupGestureSource(iv1, "switch");
+                               
+                           }
+                           else if(circuit.getComponent(i, j) instanceof Wire){
+                               Wire w = (Wire) circuit.getComponent(i,j);
+                               if(checkWireType(w.getType())){
+                                Image img1 = new Image(getClass().getResourceAsStream("Images/"+w.getType()+".png"));
+                                iv1.setImage(img1);
+                                setupGestureSource(iv1, w.getType());
+                               }
+                           }
+                           else{
+                                Pane stpane = new Pane();
+                                stpane.setMinSize(gridSize, gridSize);
+                                stpane.setMaxSize(gridSize, gridSize);
+                                stpane.setPrefSize(gridSize, gridSize);
+                                setupGestureTarget(stpane, i, j);
+                                canvasGrid.add(stpane,i,j); 
+                                continue;
+                           }
+
+                            Pane stpane = new Pane();
+                            stpane.setMinSize(gridSize, gridSize);
+                            stpane.setMaxSize(gridSize, gridSize);
+                            stpane.setPrefSize(gridSize, gridSize);
+                            //stpane.setStyle("-fx-background-color:white");
+                            setupGestureTarget(stpane, i, j);
+                            setupMouseClickSource(iv1,i,j); 
+                            stpane.getChildren().add(iv1);
+                            canvasGrid.add(stpane,i,j); 
+                           
+                        }
                     }
+                    
+                    
+                    
                 }catch (FileNotFoundException ex) {
 			ex.printStackTrace();
 		}catch (IOException ex) {
@@ -291,7 +364,7 @@ public class HelloDragAndDrop extends Application {
                 
                 circuit = new Circuit();
                 grid.getChildren().remove(canvasGrid);
-                GridPane canvasGrid = new GridPane();
+                canvasGrid = new GridPane();
                 grid.add(canvasGrid,1,1);
                 canvasGrid.setGridLinesVisible(true);
                 int gridSize = 50;
@@ -688,7 +761,21 @@ public class HelloDragAndDrop extends Application {
         });
     }
     
-
+    boolean checkWireType(String type){
+        String[] wireTypes = new String[6];
+        wireTypes[0] = "wireF";
+        wireTypes[1] = "wireHorizontal";
+        wireTypes[2] = "wireJ";
+        wireTypes[3] = "wireL";
+        wireTypes[4] = "wireLeftDown";
+        wireTypes[5] = "wireVertical";
+        for(String wireType : wireTypes){
+            if(type.compareTo(wireType)==0){
+                return true;
+            }
+        }
+        return false;
+    }
     
     public static void main(String[] args) {
         Application.launch(args);

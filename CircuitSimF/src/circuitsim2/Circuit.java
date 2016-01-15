@@ -48,6 +48,7 @@ public class Circuit implements Serializable{
                 }
             }
          }
+         break;
         }
     }
     
