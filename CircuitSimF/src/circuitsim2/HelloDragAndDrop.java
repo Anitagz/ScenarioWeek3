@@ -117,31 +117,13 @@ public class HelloDragAndDrop extends Application {
         wireLeftDownSym.setFitHeight(symbolSize);
         wireLeftDownSym.setFitWidth(symbolSize);
         
-        Image img13 = new Image(getClass().getResourceAsStream("Images/wireTdown.png"));
-        ImageView wireTdownSym = new ImageView(img13);
-        wireTdownSym.setFitHeight(symbolSize);
-        wireTdownSym.setFitWidth(symbolSize);
-        
-        Image img14 = new Image(getClass().getResourceAsStream("Images/wireTright.png"));
-        ImageView wireTrightSym = new ImageView(img14);
-        wireTrightSym.setFitHeight(symbolSize);
-        wireTrightSym.setFitWidth(symbolSize);
-        
-        Image img15 = new Image(getClass().getResourceAsStream("Images/wireTup.png"));
-        ImageView wireTupSym = new ImageView(img15);
-        wireTupSym.setFitHeight(symbolSize);
-        wireTupSym.setFitWidth(symbolSize);
-        
         Image img16 = new Image(getClass().getResourceAsStream("Images/wireVertical.png"));
         ImageView wireVerticalSym = new ImageView(img16);
         wireVerticalSym.setFitHeight(symbolSize);
         wireVerticalSym.setFitWidth(symbolSize);
         
-        Image img17 = new Image(getClass().getResourceAsStream("Images/wireTleft.png"));
-        ImageView wireTleftSym = new ImageView(img17);
-        wireTleftSym.setFitHeight(symbolSize);
-        wireTleftSym.setFitWidth(symbolSize);
-        
+
+    
         setupGestureSource(batterySym,"battery");
         setupGestureSource(lampSym, "lamp");
         setupGestureSource(resistorSym, "resistor");
@@ -153,10 +135,6 @@ public class HelloDragAndDrop extends Application {
         setupGestureSource(wireJSym, "wireJ");
         setupGestureSource(wireLSym, "wireL");
         setupGestureSource(wireLeftDownSym, "wireLeftDown");
-        setupGestureSource(wireTdownSym, "wireTdown");
-        setupGestureSource(wireTleftSym, "wireTleft");
-        setupGestureSource(wireTrightSym, "wireTright");
-        setupGestureSource(wireTupSym, "wireTup");
         setupGestureSource(wireVerticalSym, "wireVertical");
                
         
@@ -174,10 +152,6 @@ public class HelloDragAndDrop extends Application {
         componentsGrid.add(wireLSym,1,4);
         componentsGrid.add(wireLeftDownSym,0,5);
         componentsGrid.add(wireFSym,1,5);
-        componentsGrid.add(wireTdownSym,0,6);
-        componentsGrid.add(wireTleftSym,1,6);
-        componentsGrid.add(wireTrightSym,0,7);
-        componentsGrid.add(wireTupSym,1,7);
         componentsGrid.setHgap(5);
         componentsGrid.setVgap(5);
         grid.add(componentsGrid,0,1);
