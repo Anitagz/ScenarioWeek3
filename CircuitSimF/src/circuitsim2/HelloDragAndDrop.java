@@ -284,35 +284,41 @@ public class HelloDragAndDrop extends Application {
                                 Image img1 = new Image(getClass().getResourceAsStream("Images/battery.png"));
                                 iv1.setImage(img1);
                                 setupGestureSource(iv1, "battery");
+                                System.out.println("bat");
                            }
                            else if(circuit.getComponent(i, j) instanceof Ammeter){
                                 Image img1 = new Image(getClass().getResourceAsStream("Images/ammeter.png"));
                                 iv1.setImage(img1);
                                 setupGestureSource(iv1, "ammeter");
+                                System.out.println("amm");
                                
                            }
                            else if(circuit.getComponent(i, j) instanceof Voltmeter){
                                 Image img1 = new Image(getClass().getResourceAsStream("Images/voltmeter.png"));
                                 iv1.setImage(img1);
                                 setupGestureSource(iv1, "voltmeter");
+                                System.out.println("volt");
                                
                            }
                            else if(circuit.getComponent(i, j) instanceof Resistor){
                                 Image img1 = new Image(getClass().getResourceAsStream("Images/resistor.png"));
                                 iv1.setImage(img1);
                                 setupGestureSource(iv1, "resistor");
+                                System.out.println("res");
                                
                            }
                            else if(circuit.getComponent(i, j) instanceof Lamp){
                                 Image img1 = new Image(getClass().getResourceAsStream("Images/lamp.png"));
                                 iv1.setImage(img1);
                                 setupGestureSource(iv1, "lamp");
+                                System.out.println("lamp");
                                
                            }
                            else if(circuit.getComponent(i, j) instanceof Switch){
                                 Image img1 = new Image(getClass().getResourceAsStream("Images/switch.png"));
                                 iv1.setImage(img1);
                                 setupGestureSource(iv1, "switch");
+                                System.out.println("s");
                                
                            }
                            else if(circuit.getComponent(i, j) instanceof Wire){
@@ -322,6 +328,7 @@ public class HelloDragAndDrop extends Application {
                                 iv1.setImage(img1);
                                 setupGestureSource(iv1, w.getType());
                                }
+                               System.out.println("w");
                            }
                            else{
                                 Pane stpane = new Pane();
@@ -339,7 +346,8 @@ public class HelloDragAndDrop extends Application {
                             stpane.setPrefSize(gridSize, gridSize);
                             //stpane.setStyle("-fx-background-color:white");
                             setupGestureTarget(stpane, i, j);
-                            setupMouseClickSource(iv1,i,j); 
+                            setupMouseClickSource(iv1,i,j);
+                            System.out.println(iv1.getImage());
                             stpane.getChildren().add(iv1);
                             canvasGrid.add(stpane,i,j); 
                            
@@ -482,13 +490,6 @@ public class HelloDragAndDrop extends Application {
                         double vol = 0;//b.getVoltage();
                         Label lab = new Label("The Voltage is "+vol);
                         System.out.println(vol);
-                        rside.getChildren().addAll(lab);
-                    }
-                    else if (circuit.getComponent(i,j) instanceof Ammeter){
-                        Ammeter b = (Ammeter) circuit.getComponent(i,j);
-                        double cur = 0;//b.getCurrent();
-                        Label lab = new Label("The cuurent is "+cur);
-                        System.out.println(cur);
                         rside.getChildren().addAll(lab);
                     }                
                     else if (circuit.getComponent(i,j) instanceof Resistor){
@@ -706,36 +707,6 @@ public class HelloDragAndDrop extends Application {
                         //System.out.println(j);
                         Wire wireleftdown = new Wire("wire5","wireLeftDown");
                         circuit.setComponent(wireleftdown, i, j);
-                }
-                else if(component.compareTo("wireTdown")==0){
-                    Image img1 = new Image(getClass().getResourceAsStream("Images/wireTdown.png"));
-                        iv1.setImage(img1);
-                        setupGestureSource(iv1, component);
-                        setupMouseClickSource(iv1,i,j);
-                        //System.out.println(i);
-                        //System.out.println(j);
-                        Wire wiretdown = new Wire("wire6","wireTdown");
-                        circuit.setComponent(wiretdown, i, j);
-                }
-                else if(component.compareTo("wireTleft")==0){
-                    Image img1 = new Image(getClass().getResourceAsStream("Images/wireTleft.png"));
-                        iv1.setImage(img1);
-                        setupGestureSource(iv1, component);
-                        setupMouseClickSource(iv1,i,j);
-                        //System.out.println(i);
-                        //System.out.println(j);
-                        Wire wiretleft = new Wire("wire7","wireTleft");
-                        circuit.setComponent(wiretleft, i, j);
-                }
-                else if(component.compareTo("wireTup")==0){
-                    Image img1 = new Image(getClass().getResourceAsStream("Images/wireTup.png"));
-                        iv1.setImage(img1);
-                        setupGestureSource(iv1, component);
-                        setupMouseClickSource(iv1,i,j);
-                        //System.out.println(i);
-                        //System.out.println(j);
-                        Wire wiretup = new Wire("wire8","wireTup");
-                        circuit.setComponent(wiretup, i, j);
                 }
                 else if(component.compareTo("wireVertical")==0){
                     Image img1 = new Image(getClass().getResourceAsStream("Images/wireVertical.png"));
