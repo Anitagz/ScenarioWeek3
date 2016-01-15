@@ -11,7 +11,6 @@ package circuitsim2;
  */
 public class Battery extends Component {
     
-    //private String name;
     private double voltage;
   
     public Battery(String n){
